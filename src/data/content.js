@@ -16,7 +16,7 @@ export const ARTEFAK_LIST = [
     title: "Modul Ajar Project IoT kelas X",
     description: "Modul ajar ini disusun sebagai panduan pembelajaran materi Project IoT berbasis ESP32/ESP8266 untuk peserta didik kelas X TKJ.",
     pdfUrl: "/docs/modul_ajar.pdf",
-    tags: ["IoT", "Informatika"],   // Tambahkan ini agar .map tidak error
+    tags: ["IoT", "Informatika"],
     analysis: {
       context: "Modul ajar ini disusun untuk mendukung pembelajaran Dasar Program Keahlian (DPK) kelas X TKJ pada materi Internet of Things (IoT). Pembelajaran dirancang menggunakan model Project Based Learning (PjBL) agar peserta didik tidak hanya memahami konsep IoT, tetapi juga mampu merancang, membuat, dan mempresentasikan proyek IoT secara berkelompok.",
       strengths: "Modul ajar ini memberikan pengalaman belajar yang berpusat pada peserta didik melalui kegiatan proyek nyata. Selain mengembangkan keterampilan teknis, pembelajaran juga melatih kemampuan kolaborasi, komunikasi, berpikir kritis, dan kreativitas peserta didik.",
@@ -63,7 +63,6 @@ export const DATA_NILAI = [
 ];
 
 // 4. Data Dokumentasi 
-
 export const DOKUMENTASI_LIST = [
   {
     id: 1,
@@ -77,7 +76,8 @@ export const DOKUMENTASI_LIST = [
     title: "Pendampingan Praktik IoT",
     category: "Mengajar",
     description: "Mendampingi siswa kelas X dalam prakti proyek IoT",
-    images: ["/images/mendampingi_siswa_praktik.jpg",
+    images: [
+      "/images/mendampingi_siswa_praktik.jpg",
       "/images/mendampingi_siswa_praktik2.jpg",
       "/images/mendampingi_siswa_praktik3.jpg",
     ],
@@ -93,7 +93,7 @@ export const DOKUMENTASI_LIST = [
     id: 4,
     title: "Presentasi Hasil Proyek IoT",
     category: "Mengajar",
-    description: "Siswa mempresentasika hasil proyek IoT di Aula SMKN 2 Salatiga",
+    description: "Siswa mempresentasikan hasil proyek IoT di Aula SMKN 2 Salatiga",
     images: ["/images/presentasi_hasil.jpg"],
   },
   {
@@ -101,7 +101,8 @@ export const DOKUMENTASI_LIST = [
     title: "Contoh Proyek IoT Siswa",
     category: "Mengajar",
     description: "Beberapa contoh proyek IoT yang telah dibuat oleh siswa di kelas X TKJ",
-    images: ["/images/hasil_projek1.jpg",
+    images: [
+      "/images/hasil_projek1.jpg",
       "/images/hasil_projek2.jpg",
       "/images/hasil_projek3.jpg",
       "/images/hasil_projek4.jpg",
@@ -111,15 +112,15 @@ export const DOKUMENTASI_LIST = [
     id: 6,
     title: "Diskusi dengan Guru Pamong dan DPL",
     category: "Diskusi",
-    description: "Beberapa contoh proyek IoT yang telah dibuat oleh siswa di kelas X TKJ",
-    images: ["/images/diskusi-guru-pamong.jpeg",
+    description: "Diskusi dan konsultasi bimbingan bersama Guru Pamong serta DPL mengenai perkembangan PPL",
+    images: [
+      "/images/diskusi-guru-pamong.jpeg",
       "/images/diskusi_dpl.jpeg",
     ],
   },
 ];
 
-// data/content.ts
-
+// 5. Data Penilaian Pembelajaran
 export const DATA_PENILAIAN = [
   {
     id: 1,
@@ -147,8 +148,7 @@ export const DATA_PENILAIAN = [
   }
 ];
 
-// Data E-Porotfolio 2
-
+// 6. Data Visi & Misi
 export const MISI_DATA = {
   visi: "Menjadi pendidik Informatika yang inovatif, adaptif, dan mampu menuntun peserta didik mencapai kemandirian digital berdasarkan nilai-nilai luhur Pancasila.",
   misi: [
@@ -158,15 +158,15 @@ export const MISI_DATA = {
     "Mengintegrasikan pendidikan karakter dalam setiap proses pembelajaran digital."
   ],
   kompetensi: [
-    { title: "Pedagogik", desc: "Menguasai teori belajar dan prinsip pembelajaran yang mendidik.", icon: "BookOpen", color: "bg-p-indigo text-p-indigo-text" },
-    { title: "Profesional", desc: "Menguasai materi Informatika secara luas dan mendalam.", icon: "Cpu", color: "bg-p-emerald text-p-emerald-text" },
-    { title: "Sosial", desc: "Mampu berkomunikasi secara efektif dengan orang tua dan masyarakat.", icon: "Users", color: "bg-p-amber text-p-amber-text" },
-    { title: "Kepribadian", desc: "Menjadi teladan dengan integritas dan etika yang kuat.", icon: "Shield", color: "bg-p-rose text-p-rose-text" }
+    { title: "Pedagogik", desc: "Menguasai teori belajar dan prinsip pembelajaran yang mendidik.", icon: "BookOpen", color: "bg-neutral-100 text-neutral-900 border border-neutral-200" },
+    { title: "Profesional", desc: "Menguasai materi Informatika secara luas dan mendalam.", icon: "Cpu", color: "bg-neutral-100 text-neutral-900 border border-neutral-200" },
+    { title: "Sosial", desc: "Mampu berkomunikasi secara efektif dengan orang tua dan masyarakat.", icon: "Users", color: "bg-neutral-100 text-neutral-900 border border-neutral-200" },
+    { title: "Kepribadian", desc: "Menjadi teladan dengan integritas dan etika yang kuat.", icon: "Shield", color: "bg-neutral-100 text-neutral-900 border border-neutral-200" }
   ],
   karakter: ["Inovatif", "Empati", "Disiplin", "Kolaboratif", "Reflektif"]
 };
 
-// 2. Tambahkan Data E-Portfolio 2
+// 7. Data E-Portfolio 2
 export const EPORTFOLIO_2_DATA = {
   refleksi: {
     pembelajaran: "Selama tahapan PPL Terbimbing, saya belajar bahwa menjadi guru bukan sekadar penguasaan materi, melainkan seni membangun hubungan dan memahami psikologi peserta didik. Saya belajar merancang modul ajar yang adaptif, mengelola dinamika kelas yang heterogen, hingga melakukan asesmen yang autentik.",

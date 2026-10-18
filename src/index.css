@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fafafa;
+  --foreground: #171717;
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-p-indigo: #f4f4f5;
+  --color-p-indigo-text: #18181b;
+  --color-p-rose: #f4f4f5;
+  --color-p-rose-text: #27272a;
+  --color-p-emerald: #e4e4e7;
+  --color-p-emerald-text: #18181b;
+  --color-p-amber: #f4f4f5;
+  --color-p-amber-text: #3f3f46;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  margin: 0;
+  padding: 0;
+}

@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# E-Portfolio PPL Terbimbing (React.js)
 
-## Getting Started
+Portofolio digital Program Profesi Guru (PPG) Calon Guru Bidang Studi Informatika — Universitas Kristen Satya Wacana (UKSW) & SMK Negeri 2 Salatiga.
 
-First, run the development server:
+## Teknologi & Arsitektur
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Framework**: [React 19](https://react.dev) (SPA)
+- **Bundler & Tooling**: [Vite](https://vitejs.dev)
+- **Routing**: [React Router DOM v7](https://reactrouter.com)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com)
+- **Animasi & Transisi**: [Framer Motion](https://motion.dev)
+- **Ikon**: [Lucide React](https://lucide.dev)
+
+## Struktur Proyek
+
+```
+├── public/                 # Dokumen PDF perangkat, modul ajar, dan foto dokumentasi
+├── src/
+│   ├── components/         # Komponen UI React (Navbar, Footer, Modal, Cards, Breadcrumbs)
+│   ├── data/               # Data konten portofolio (content.js)
+│   ├── pages/              # Halaman aplikasi React
+│   │   ├── Home.jsx        # Beranda (Hero editorial monokrom)
+│   │   ├── Profil.jsx      # Biodata & riwayat pendidikan
+│   │   ├── Artefak.jsx     # Modul ajar, PPT, LKPD & modal analisis
+│   │   ├── Penilaian.jsx   # Hasil evaluasi Guru Pamong & DPL
+│   │   ├── Dokumentasi.jsx # Galeri praktik mengajar & bimbingan
+│   │   ├── Misi.jsx        # Visi, misi, & kompetensi guru
+│   │   └── EPortfolio2.jsx # Refleksi akhir & ideologi pengajaran KHD
+│   ├── App.jsx             # Root layout & routing SPA
+│   ├── index.css           # Konfigurasi Tailwind & tema warna monokrom
+│   └── main.jsx            # Entry point React DOM
+├── index.html              # Template HTML utama
+└── vite.config.js          # Konfigurasi Vite
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Menjalankan Proyek
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+# Jalankan development server (port 3000)
+npm run dev
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# Build untuk produksi
+npm run build
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# Preview build produksi
+npm run preview
+```
