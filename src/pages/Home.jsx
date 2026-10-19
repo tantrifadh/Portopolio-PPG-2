@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Award, BookOpen, Users, FileCheck, ArrowRight, Sparkles, FolderGit2, ShieldCheck, Camera, GraduationCap } from "lucide-react";
+import { Award, BookOpen, Users, FileCheck, ArrowRight, Sparkles, FolderGit2, ShieldCheck, Camera, GraduationCap, Presentation } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export default function Home() {
@@ -50,10 +50,10 @@ export default function Home() {
               <ArrowRight size={18} />
             </Link>
             <Link 
-              to="/profil" 
-              className="inline-flex items-center gap-2 border border-neutral-300 bg-white text-neutral-800 px-8 py-3.5 rounded-xl hover:bg-neutral-100 hover:text-neutral-950 transition font-medium shadow-xs"
+              to="/seminar" 
+              className="inline-flex items-center gap-2 bg-neutral-100 text-neutral-900 border border-neutral-300 px-8 py-3.5 rounded-xl hover:bg-neutral-200 transition font-medium shadow-xs"
             >
-              <span>Profil Pendidik</span>
+              <span>Seminar PPG</span>
             </Link>
           </div>
         </motion.div>
@@ -97,6 +97,13 @@ export default function Home() {
               href: "/artefak",
               icon: FolderGit2,
               tag: "Perangkat",
+            },
+            {
+              title: "Seminar PPG",
+              desc: "LK Refleksi Semester 1 & 2, refleksi pengalaman belajar PPG, visi pendidikan, serta Rencana Tindak Lanjut (RTL).",
+              href: "/seminar",
+              icon: Presentation,
+              tag: "Seminar",
             },
             {
               title: "Instrumen Penilaian",

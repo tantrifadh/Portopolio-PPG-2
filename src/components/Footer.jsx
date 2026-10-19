@@ -41,6 +41,7 @@ export default function Footer() {
               {[
                 { name: "Profil Mahasiswa", href: "/profil" },
                 { name: "Artefak Pembelajaran", href: "/artefak" },
+                { name: "Seminar PPG", href: "/seminar" },
                 { name: "Instrumen Penilaian", href: "/penilaian" },
                 { name: "Dokumentasi Praktik", href: "/dokumentasi" },
                 { name: "Visi & Misi Pendidik", href: "/misi" },

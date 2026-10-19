@@ -34,12 +34,19 @@ export default function AnalysisModal({ isOpen, onClose, data }) {
           </button>
 
           <div className="p-8 md:p-10">
-            {/* Judul Artefak */}
+            {/* Judul Artefak / Seminar */}
             <div className="mb-8 max-w-[90%]">
-              <span className="text-xs uppercase font-bold tracking-widest text-neutral-500">Lembar Analisis Artefak</span>
+              <span className="text-xs uppercase font-bold tracking-widest text-neutral-500">
+                {data.category ? `Lembar Analisis & Refleksi • ${data.category}` : "Lembar Analisis Artefak"}
+              </span>
               <h2 className="text-2xl md:text-3xl font-extrabold text-neutral-950 leading-tight mt-1">
                 {data.title}
               </h2>
+              {data.subtitle && (
+                <p className="text-sm text-neutral-600 mt-1.5 font-medium leading-relaxed">
+                  {data.subtitle}
+                </p>
+              )}
               <div className="h-0.5 w-16 bg-neutral-950 mt-3 rounded-full"></div>
             </div>
 

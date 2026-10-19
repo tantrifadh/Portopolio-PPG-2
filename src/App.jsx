@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Profil from "./pages/Profil";
 import Artefak from "./pages/Artefak";
+import Seminar from "./pages/Seminar";
 import Penilaian from "./pages/Penilaian";
 import Dokumentasi from "./pages/Dokumentasi";
 import Misi from "./pages/Misi";
@@ -33,6 +34,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/profil" element={<Profil />} />
           <Route path="/artefak" element={<Artefak />} />
+          <Route path="/seminar" element={<Seminar />} />
           <Route path="/penilaian" element={<Penilaian />} />
           <Route path="/dokumentasi" element={<Dokumentasi />} />
           <Route path="/misi" element={<Misi />} />
