@@ -11,9 +11,8 @@ export default function Seminar() {
   const categories = [
     "Semua",
     "Refleksi Semester",
-    "Refleksi Komprehensif",
+    "Refleksi",
     "Visi & Desain Masa Depan",
-    "Rencana Tindak Lanjut"
   ];
 
   const filteredList = activeCategory === "Semua"
@@ -80,9 +79,9 @@ export default function Seminar() {
 
               {/* Kutipan Deskripsi */}
               <div className="relative z-10">
-                <p className="text-neutral-700 group-hover:text-neutral-300 text-xs sm:text-sm line-clamp-3 leading-relaxed font-normal transition-colors">
+                {/* <p className="text-neutral-700 group-hover:text-neutral-300 text-xs sm:text-sm line-clamp-3 leading-relaxed font-normal transition-colors">
                   "{item.description}"
-                </p>
+                </p> */}
               </div>
             </div>
 

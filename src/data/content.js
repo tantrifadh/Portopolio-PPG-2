@@ -234,7 +234,7 @@ export const SEMINAR_LIST = [
   {
     id: "refleksi-pengalaman-ppg",
     title: "Refleksi Pengalaman Belajar Selama Mengikuti PPG",
-    category: "Refleksi Komprehensif",
+    category: "Refleksi",
     subtitle: "Metamorfosis Paradigma Menjadi Guru Profesional Abad 21",
     description: "Sintesis holistik transformasi kompetensi pedagogik, kepribadian, sosial, dan profesional selama menempuh pendidikan profesi di LPTK UKSW.",
     pdfUrl: "/docs/Refleksi.pdf",
