@@ -49,17 +49,17 @@ export default function Home() {
               <span>Eksplorasi Artefak</span>
               <ArrowRight size={18} />
             </Link>
-            <Link 
+            {/* <Link 
               to="/seminar" 
               className="inline-flex items-center gap-2 bg-neutral-100 text-neutral-900 border border-neutral-300 px-8 py-3.5 rounded-xl hover:bg-neutral-200 transition font-medium shadow-xs"
             >
               <span>Seminar PPG</span>
-            </Link>
+            </Link> */}
           </div>
         </motion.div>
       </section>
 
-      {/* STATS SUMMARY - MONOCHROME EDITORIAL */}
+      {/* STATS SUMMARY - MONOCHROME EDITORIAL
       <section className="border-y border-neutral-200 bg-white py-14">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
@@ -80,7 +80,7 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* QUICK EXPLORATION CARDS */}
       <section className="container mx-auto px-6">

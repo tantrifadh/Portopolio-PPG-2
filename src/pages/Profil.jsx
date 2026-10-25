@@ -9,9 +9,7 @@ export default function Profil() {
       <div className="grid md:grid-cols-3 gap-12">
         {/* Foto & Identitas Dasar */}
         <div className="space-y-6">
-          <div className="aspect-square rounded-3xl bg-neutral-100 border border-neutral-200 flex items-center justify-center shadow-xs">
-            <User size={100} className="text-neutral-400" />
-          </div>
+
           <div className="bg-white p-6 rounded-2xl border border-neutral-200 space-y-4 shadow-xs">
             <h2 className="text-lg font-bold border-b border-neutral-100 pb-2.5 text-neutral-950">Identitas Diri</h2>
             <div className="space-y-3.5 text-sm">
@@ -21,7 +19,7 @@ export default function Profil() {
               </div>
               <div className="flex items-center gap-3 text-neutral-700">
                 <GraduationCap size={18} className="text-neutral-950 shrink-0" />
-                <span>PPG Calon Guru Gel. 1 — 2026</span>
+                <span>PPG Calon Guru — 2026</span>
               </div>
               <div className="flex items-center gap-3 text-neutral-700">
                 <MapPin size={18} className="text-neutral-950 shrink-0" />

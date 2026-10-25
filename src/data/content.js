@@ -183,29 +183,29 @@ export const EPORTFOLIO_2_DATA = {
 
 // 8. Data Seminar PPG
 export const SEMINAR_LIST = [
-  {
-    id: "lk-refleksi-smt-2",
-    title: "LK Refleksi Semester 2",
-    category: "Refleksi Semester",
-    subtitle: "Implementasi TPACK, PjBL IoT, & Kepemimpinan Pembelajaran",
-    description: "Evaluasi kritis pelaksanaan pembelajaran mandiri PPL II, integrasi teknologi mutakhir melalui Project IoT ESP32, serta penerapan Pembelajaran Sosial Emosional (PSE).",
-    pdfUrl: "/docs/media_ajar.pdf",
-    tags: ["Semester 2", "TPACK & IoT", "PPL II"],
+    {
+    id: "visi-pendidikan-indonesia",
+    title: "Visi untuk Pendidikan di Indonesia & Sebagai Guru",
+    category: "Visi & Desain Masa Depan",
+    subtitle: "Mewujudkan Generasi Digital Berakar Budi Pekerti Luhur",
+    description: "Manifesto visi pendidikan nasional di era revolusi kecerdasan buatan (AI) serta cetak biru peran diri sebagai guru Informatika yang transformatif dan humanis.",
+    pdfUrl: "/docs/LK1.pdf",
+    tags: ["Visi Nasional", "Era AI & Digital", "Profil Pelajar Pancasila"],
     analysis: {
-      context: "Pendalaman praktik pembelajaran mandiri pada semester 2 dengan penekanan pada penerapan model Project-Based Learning (PjBL) terintegrasi IoT serta asesmen autentik berkelanjutan.",
-      strengths: "Berhasil menciptakan atmosfer belajar aktif di laboratorium dengan keterlibatan proyek nyata hingga 90%+ dan penguatan keterampilan 4C (Critical thinking, Creativity, Collaboration, Communication).",
-      weaknesses: "Waktu troubleshooting sintaks kode dan pengkabelan mikrokontroler memerlukan manajemen alokasi waktu sesi lab yang lebih presisi.",
-      reflection: "Sebagai pendidik era digital, fleksibilitas guru sebagai fasilitator dan arsitek lingkungan belajar yang aman sangat menentukan keberhasilan eksperimen siswa.",
-      improvement: "Menyediakan panduan mandiri troubleshooting sirkuit IoT dan membentuk sistem mentor sebaya (peer tutoring) di tiap kelompok."
+      context: "Pendidikan Indonesia masa depan menghadapi konvergensi kemajuan teknologi informasi, tantangan otomatisasi AI, dan urgensi penguatan karakter kebangsaan.",
+      strengths: "Memformulasikan model pembelajaran Informatika yang tidak hanya mengajarkan 'bagaimana teknologi bekerja', melainkan 'bagaimana teknologi dimanfaatkan secara etis untuk memecahkan masalah kemanusiaan'.",
+      weaknesses: "Tantangan disparitas sarana teknologi antar daerah yang memerlukan strategi adaptasi pembelajaran fleksibel (low-tech & high-concept).",
+      reflection: "Teknologi adalah pengungkit (leverage), tetapi sentuhan kemanusiaan, keteladanan budi pekerti, dan cinta kasih guru tetap menjadi jiwa pendidikan yang tidak akan pernah tergantikan.",
+      improvement: "Menginisiasi modul ajar literasi etika kecerdasan buatan (AI Ethics) yang ramah siswa SMK untuk membentengi generasi muda dari distorsi digital."
     }
   },
-  {
+    {
     id: "lk-refleksi-smt-1",
     title: "LK Refleksi Semester 1",
     category: "Refleksi Semester",
     subtitle: "Fondasi Filosofis & Pemahaman Karakteristik Peserta Didik",
     description: "Analisis reflektif mata kuliah inti semester 1 (Filosofi Pendidikan Indonesia, Pemahaman Peserta Didik & Pembelajarannya, Prinsip Pengajaran & Asesmen I) serta observasi PPL I.",
-    pdfUrl: "/docs/modul_ajar.pdf",
+    pdfUrl: "/docs/LK2.pdf",
     tags: ["Semester 1", "Filosofi KHD", "PPL I"],
     analysis: {
       context: "Refleksi perkuliahan semester 1 yang berfokus pada dekonstruksi dan rekonstruksi pemikiran tentang hakikat pendidikan. Mengintegrasikan pemikiran Ki Hajar Dewantara mengenai sistem 'Among' dan kerangka Understanding by Design (UbD) dalam memetakan asesmen diagnostik di SMK Negeri 2 Salatiga.",
@@ -216,12 +216,28 @@ export const SEMINAR_LIST = [
     }
   },
   {
+    id: "lk-refleksi-smt-2",
+    title: "LK Refleksi Semester 2",
+    category: "Refleksi Semester",
+    subtitle: "Implementasi TPACK, PjBL IoT, & Kepemimpinan Pembelajaran",
+    description: "Evaluasi kritis pelaksanaan pembelajaran mandiri PPL II, integrasi teknologi mutakhir melalui Project IoT ESP32, serta penerapan Pembelajaran Sosial Emosional (PSE).",
+    pdfUrl: "/docs/LK3.pdf",
+    tags: ["Semester 2", "TPACK & IoT", "PPL II"],
+    analysis: {
+      context: "Pendalaman praktik pembelajaran mandiri pada semester 2 dengan penekanan pada penerapan model Project-Based Learning (PjBL) terintegrasi IoT serta asesmen autentik berkelanjutan.",
+      strengths: "Berhasil menciptakan atmosfer belajar aktif di laboratorium dengan keterlibatan proyek nyata hingga 90%+ dan penguatan keterampilan 4C (Critical thinking, Creativity, Collaboration, Communication).",
+      weaknesses: "Waktu troubleshooting sintaks kode dan pengkabelan mikrokontroler memerlukan manajemen alokasi waktu sesi lab yang lebih presisi.",
+      reflection: "Sebagai pendidik era digital, fleksibilitas guru sebagai fasilitator dan arsitek lingkungan belajar yang aman sangat menentukan keberhasilan eksperimen siswa.",
+      improvement: "Menyediakan panduan mandiri troubleshooting sirkuit IoT dan membentuk sistem mentor sebaya (peer tutoring) di tiap kelompok."
+    }
+  },
+  {
     id: "refleksi-pengalaman-ppg",
     title: "Refleksi Pengalaman Belajar Selama Mengikuti PPG",
     category: "Refleksi Komprehensif",
     subtitle: "Metamorfosis Paradigma Menjadi Guru Profesional Abad 21",
     description: "Sintesis holistik transformasi kompetensi pedagogik, kepribadian, sosial, dan profesional selama menempuh pendidikan profesi di LPTK UKSW.",
-    pdfUrl: "/docs/Lampiran_8.pdf",
+    pdfUrl: "/docs/Refleksi.pdf",
     tags: ["Sintesis PPG", "Transformasi Diri", "Guru Profesional"],
     analysis: {
       context: "Sintesis menyeluruh perjalanan belajar dari orientasi akademik, telaah kurikulum mendalam, microteaching, uji komprehensif, hingga praktik pengalaman lapangan di sekolah mitra.",
@@ -229,38 +245,6 @@ export const SEMINAR_LIST = [
       weaknesses: "Tuntutan adaptasi cepat antara beban kurikuler kampus dengan dinamika riil permasalahan siswa di sekolah membutuhkan resiliensi mental yang tinggi.",
       reflection: "Profesi guru adalah profesi kemuliaan yang menuntut komitmen belajar sepanjang hayat (lifelong learner). Integritas, keteladanan, dan empati merupakan modal terdalam yang melampaui kecanggihan teknologi apa pun.",
       improvement: "Melanjutkan dokumentasi portofolio reflektif digital secara mandiri untuk mengkaji keefektifan setiap siklus mengajar di masa depan."
-    }
-  },
-  {
-    id: "visi-pendidikan-indonesia",
-    title: "Visi untuk Pendidikan di Indonesia & Sebagai Guru",
-    category: "Visi & Desain Masa Depan",
-    subtitle: "Mewujudkan Generasi Digital Berakar Budi Pekerti Luhur",
-    description: "Manifesto visi pendidikan nasional di era revolusi kecerdasan buatan (AI) serta cetak biru peran diri sebagai guru Informatika yang transformatif dan humanis.",
-    pdfUrl: "/docs/Lampiran_7.pdf",
-    tags: ["Visi Nasional", "Era AI & Digital", "Profil Pelajar Pancasila"],
-    analysis: {
-      context: "Pendidikan Indonesia masa depan menghadapi konvergensi kemajuan teknologi informasi, tantangan otomatisasi AI, dan urgensi penguatan karakter kebangsaan.",
-      strengths: "Memformulasikan model pembelajaran Informatika yang tidak hanya mengajarkan 'bagaimana teknologi bekerja', melainkan 'bagaimana teknologi dimanfaatkan secara etis untuk memecahkan masalah kemanusiaan'.",
-      weaknesses: "Tantangan disparitas sarana teknologi antar daerah yang memerlukan strategi adaptasi pembelajaran fleksibel (low-tech & high-concept).",
-      reflection: "Teknologi adalah pengungkit (leverage), tetapi sentuhan kemanusiaan, keteladanan budi pekerti, dan cinta kasih guru tetap menjadi jiwa pendidikan yang tidak akan pernah tergantikan.",
-      improvement: "Menginisiasi modul ajar literasi etika kecerdasan buatan (AI Ethics) yang ramah siswa SMK untuk membentengi generasi muda dari distorsi digital."
-    }
-  },
-  {
-    id: "rtl-hasil-identifikasi",
-    title: "Rencana Tindak Lanjut (RTL) Sesuai Hasil Identifikasi",
-    category: "Rencana Tindak Lanjut",
-    subtitle: "Rencana Aksi Konkret Pengembangan Keprofesian Berkelanjutan (PKB)",
-    description: "Matriks program tindak lanjut pasca-PPG yang dirumuskan secara sistematis berdasarkan hasil identifikasi kebutuhan, evaluasi pamong, serta masukan DPL.",
-    pdfUrl: "/docs/lkpd_iot.pdf",
-    tags: ["RTL", "PKB Berkelanjutan", "Aksi Nyata"],
-    analysis: {
-      context: "Disusun berdasarkan matriks identifikasi evaluasi komprehensif selama masa PPL Terbimbing dan Mandiri untuk memastikan keberlanjutan dampak positif pasca kelulusan program PPG.",
-      strengths: "Menghasilkan 3 pilar aksi nyata terukur: (1) Inovasi pembelajaran digital berbasis PjBL, (2) Partisipasi aktif dalam Komunitas Belajar MGMP Informatika, (3) Publikasi Penelitian Tindakan Kelas (PTK) berkala.",
-      weaknesses: "Perlu komitmen disiplin waktu dalam menyelaraskan tugas pokok mengajar dengan agenda kolaborasi keprofesian eksternal.",
-      reflection: "Tuntutan profesionalisme guru diwujudkan melalui kemauan terus meng-upgrade kompetensi diri secara konsisten demi memberi layanan terbaik bagi murid.",
-      improvement: "Menjalin kerja sama kolaboratif dengan mitra industri teknologi (IDUKA) untuk sinkronisasi kurikulum vokasi dan penyelenggaraan sertifikasi kompetensi siswa."
     }
   }
 ];
