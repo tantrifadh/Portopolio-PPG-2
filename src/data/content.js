@@ -4,10 +4,8 @@ export const NAV_LINKS = [
   { name: "Profil", href: "/profil" },
   { name: "Artefak", href: "/artefak" },
   { name: "Seminar", href: "/seminar" },
-  { name: "Penilaian", href: "/penilaian" },
   { name: "Dokumentasi", href: "/dokumentasi" },
   { name: "Misi", href: "/misi" },
-  { name: "E-Portofolio 2", href: "/e-portofolio-2" },
 ];
 
 // 2. Data Artefak & Analisis Lengkap
@@ -121,35 +119,7 @@ export const DOKUMENTASI_LIST = [
   },
 ];
 
-// 5. Data Penilaian Pembelajaran
-export const DATA_PENILAIAN = [
-  {
-    id: 1,
-    title: "Lampiran 7: Penilaian Perangkat Pembelajaran",
-    category: "Administrasi",
-    pdfUrl: "/docs/Lampiran_7.pdf",
-    score: 92,
-    outline: [
-      "Siklus 1: Fokus pada kesesuaian tujuan pembelajaran dengan ATP.",
-      "Siklus 2: Penguatan pada integrasi teknologi (TPACK) dalam media pembelajaran.",
-      "Siklus 3: Pengembangan instrumen penilaian HOTS dan LKPD berdiferensiasi."
-    ]
-  },
-  {
-    id: 2,
-    title: "Lampiran 8: Penilaian Praktik Mengajar",
-    category: "Praktik Lapangan",
-    pdfUrl: "/docs/Lampiran_8.pdf",
-    score: 95,
-    outline: [
-      "Siklus 1: Penyesuaian diri dengan karakteristik siswa dan manajemen kelas dasar.",
-      "Siklus 2: Penerapan model PjBL secara utuh dengan bantuan media interaktif.",
-      "Siklus 3: Kemandirian penuh dalam mengelola kelas dan melakukan refleksi on-the-spot."
-    ]
-  }
-];
-
-// 6. Data Visi & Misi
+// // 5. Data Visi & Misi
 export const MISI_DATA = {
   visi: "Menjadi pendidik Informatika yang inovatif, adaptif, dan mampu menuntun peserta didik mencapai kemandirian digital berdasarkan nilai-nilai luhur Pancasila.",
   misi: [
@@ -167,21 +137,7 @@ export const MISI_DATA = {
   karakter: ["Inovatif", "Empati", "Disiplin", "Kolaboratif", "Reflektif"]
 };
 
-// 7. Data E-Portfolio 2
-export const EPORTFOLIO_2_DATA = {
-  refleksi: {
-    pembelajaran: "Selama tahapan PPL Terbimbing, saya belajar bahwa menjadi guru bukan sekadar penguasaan materi, melainkan seni membangun hubungan dan memahami psikologi peserta didik. Saya belajar merancang modul ajar yang adaptif, mengelola dinamika kelas yang heterogen, hingga melakukan asesmen yang autentik.",
-    tantangan: "Pengalaman paling menantang adalah saat menghadapi rendahnya motivasi belajar pada jam pelajaran terakhir di kelas X. Solusi yang saya lakukan adalah dengan mengubah skenario pembelajaran menjadi berbasis game edukatif (gamifikasi) menggunakan Wordwall dan memberikan ice breaking yang relevan dengan materi.",
-    umpanBalik: "Saran konstruktif dari diskusi akhir menekankan pada penguatan manajemen waktu dan pemberian instruksi kelompok yang lebih spesifik. Hal ini menjadi catatan utama saya untuk persiapan PPL Mandiri agar dapat mengelola transisi antar kegiatan dengan lebih smooth."
-  },
-  filosofi: [
-    "Prinsip pengajaran saya berakar pada pemikiran Ki Hajar Dewantara, yakni pendidikan sebagai proses 'menuntun'. Saya meyakini bahwa setiap peserta didik lahir dengan kodratnya masing-masing. Tugas saya sebagai pendidik bukan untuk mengubah kodrat tersebut, melainkan menuntun tumbuh kembangnya agar mereka mencapai keselamatan dan kebahagiaan setinggi-tingginya baik sebagai manusia maupun anggota masyarakat. Dalam praktik PPL, nilai 'Ing Ngarsa Sung Tulada' saya terapkan dengan menjadi teladan dalam kedisiplinan dan integritas digital di kelas Informatika.",
-    "Pembelajaran yang saya bangun mengedepankan kemerdekaan belajar. Saya meyakini bahwa proses konstruksi pengetahuan akan terjadi lebih optimal jika siswa merasa aman dan nyaman (Psychological Safety). Saya menghubungkan teori Konstruktivisme Vygotsky dengan konsep 'Kodrat Zaman' KHD, di mana saya mengintegrasikan teknologi terkini (TPACK) dalam pembelajaran namun tetap berpijak pada nilai-nilai karakter luhur. Pendidik harus mampu bergerak dinamis menyesuaikan zaman tanpa meninggalkan akar budaya bangsa.",
-    "Sebagai guru profesional, saya memegang teguh nilai empati dan refleksi. Setiap interaksi di kelas adalah proses belajar bagi saya. Saya percaya bahwa pendidikan yang berpihak pada peserta didik adalah kunci utama transformasi pendidikan. Ke depannya, saya berkomitmen untuk terus berinovasi dalam menciptakan media pembelajaran yang inklusif, sehingga setiap anak, dengan segala keunikan dan latar belakangnya, memiliki kesempatan yang sama untuk bersinar dan menjadi versi terbaik dari dirinya sendiri."
-  ]
-};
-
-// 8. Data Seminar PPG
+// 6. Data Seminar PPG
 export const SEMINAR_LIST = [
     {
     id: "visi-pendidikan-indonesia",

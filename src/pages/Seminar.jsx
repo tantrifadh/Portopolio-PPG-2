@@ -12,8 +12,7 @@ export default function Seminar() {
     "Semua",
     "Refleksi Semester",
     "Refleksi Komprehensif",
-    "Visi & Desain Masa Depan",
-    "Rencana Tindak Lanjut"
+    "Visi & Desain Masa Depan"
   ];
 
   const filteredList = activeCategory === "Semua"

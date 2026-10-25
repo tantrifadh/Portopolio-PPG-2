@@ -42,10 +42,8 @@ export default function Footer() {
                 { name: "Profil Mahasiswa", href: "/profil" },
                 { name: "Artefak Pembelajaran", href: "/artefak" },
                 { name: "Seminar PPG", href: "/seminar" },
-                { name: "Instrumen Penilaian", href: "/penilaian" },
                 { name: "Dokumentasi Praktik", href: "/dokumentasi" },
-                { name: "Visi & Misi Pendidik", href: "/misi" },
-                { name: "E-Portfolio & Filosofi", href: "/e-portofolio-2" }
+                { name: "Visi & Misi Pendidik", href: "/misi" }
               ].map((link) => (
                 <li key={link.href}>
                   <Link to={link.href} className="flex items-center gap-2 hover:text-white transition-colors group">
