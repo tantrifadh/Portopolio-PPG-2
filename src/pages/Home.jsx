@@ -100,17 +100,10 @@ export default function Home() {
             },
             {
               title: "Seminar PPG",
-              desc: "LK Refleksi Semester 1 & 2, refleksi pengalaman belajar PPG, visi pendidikan, serta Rencana Tindak Lanjut (RTL).",
+              desc: "LK Refleksi Semester 1 & 2, refleksi pengalaman belajar PPG, serta visi dan desain masa depan pendidikan.",
               href: "/seminar",
               icon: Presentation,
               tag: "Seminar",
-            },
-            {
-              title: "Instrumen Penilaian",
-              desc: "Hasil asesmen berkala dari Guru Pamong dan Dosen Pembimbing Lapangan (Lampiran 7 & 8).",
-              href: "/penilaian",
-              icon: ShieldCheck,
-              tag: "Evaluasi",
             },
             {
               title: "Dokumentasi Praktik",
@@ -125,13 +118,6 @@ export default function Home() {
               href: "/misi",
               icon: Sparkles,
               tag: "Visi Misi",
-            },
-            {
-              title: "E-Portfolio & Filosofi",
-              desc: "Sintesis refleksi akhir PPL dan pendalaman ideologi pengajaran berakar pada Ki Hajar Dewantara.",
-              href: "/e-portofolio-2",
-              icon: GraduationCap,
-              tag: "Refleksi",
             },
             {
               title: "Biografi Pendidik",

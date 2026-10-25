@@ -11,8 +11,8 @@ export default function Seminar() {
   const categories = [
     "Semua",
     "Refleksi Semester",
-    "Refleksi",
-    "Visi & Desain Masa Depan",
+    "Refleksi Komprehensif",
+    "Visi & Desain Masa Depan"
   ];
 
   const filteredList = activeCategory === "Semua"
