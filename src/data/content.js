@@ -418,19 +418,20 @@ export const JURNAL_PTK_DATA = {
   pdfUrl: "/docs/Jurnal_PTK.pdf",
   pdfTitle: "Naskah Jurnal Ilmiah Penelitian Tindakan Kelas (PTK)",
   docCount: 1,
-  hasReflection: true,
+  hasReflection: false,
+  isJournal: true,
   metadata: {
     peneliti: "Tantri Fadhillah Asri, S.Kom",
     sekolah: "SMK Negeri 2 Salatiga",
     mataPelajaran: "Dasar-Dasar Teknik Jaringan Komputer & Telekomunikasi (IoT)",
     sasaran: "Kelas X TKJ",
-    siklus: "3 Siklus (Perencanaan, Pelaksanaan, Pengamatan, Refleksi)"
-  },
-  fourC: {
-    connection: "Menghubungkan permasalahan nyata rendahnya keaktifan dan pemahaman logika perakitan sirkuit IoT siswa kelas X TKJ dengan teori konstruktivisme dan metodologi Penelitian Tindakan Kelas (PTK). Sebagai calon pendidik profesional, PTK menjadi jembatan praktis untuk mentransformasikan refleksi kelas menjadi perbaikan tindakan pembelajaran yang sistematis, terukur, dan berbasis bukti nyata.",
-    challenge: "Tantangan utama selama pelaksanaan siklus tindakan adalah merancang lembar observasi aktivitas belajar yang reliabel, menjaga objektivitas saat membagi peran antara pengajar utama materi mikrokontroler dengan pengamat respons afektif siswa, serta ketepatan merancang intervensi perbaikan dari siklus 1 ke siklus berikutnya.",
-    concept: "1) Model Spiral PTK Kemmis & McTaggart (Plan, Act, Observe, Reflect). 2) Penerapan Project-Based Learning (PjBL) berorientasi produk autentik riil. 3) Kriteria Ketercapaian Tujuan Pembelajaran (KKTP) ranah kognitif, psikomotorik, dan sikap Profil Pelajar Pancasila. 4) Triangulasi data instrumen evaluasi (observasi kelas, tes formatif, dan angket respon kepuasan belajar).",
-    change: "Membiasakan budaya meneliti dan merefleksikan praktik mengajar sendiri secara berkelanjutan (teacher as researcher). Saya tidak lagi hanya mengandalkan intuisi semata, melainkan menganalisis data capaian kelas untuk menentukan diferensiasi materi, serta mendiseminasikan hasil penelitian ini ke dalam forum seminar profesi guru."
+    siklus: "3 Siklus (Perencanaan, Pelaksanaan, Pengamatan, Refleksi)",
+    abstrak: "Penelitian Tindakan Kelas ini bertujuan untuk meningkatkan keaktifan, pemahaman konsep, dan hasil belajar peserta didik kelas X TKJ SMK Negeri 2 Salatiga pada materi Internet of Things (IoT) melalui implementasi model Project-Based Learning (PjBL) berbantuan mikrokontroler. Penelitian dilaksanakan dalam 3 siklus dengan model Kemmis & McTaggart (Plan, Act, Observe, Reflect). Hasil penelitian menunjukkan peningkatan ketuntasan belajar klasikal dari Siklus I (62,5%), Siklus II (78,1%), hingga Siklus III (90,6%) disertai peningkatan keterampilan kolaboratif dan pemecahan masalah teknis siswa.",
+    hasilSiklus: [
+      { siklus: "Siklus I", ketuntasan: "62.5%", fokus: "Pengenalan sensor dasar & pembentukan kelompok kolaboratif" },
+      { siklus: "Siklus II", ketuntasan: "78.1%", fokus: "Pemberian scaffolding bertahap & panduan troubleshooting IoT" },
+      { siklus: "Siklus III", ketuntasan: "90.6%", fokus: "Penyelesaian proyek mandiri & presentasi hasil karya di aula sekolah" }
+    ]
   }
 };
 

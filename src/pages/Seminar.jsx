@@ -258,7 +258,7 @@ export default function Seminar() {
                         <div className="space-y-1.5 pt-4 border-t border-neutral-100 mb-5">
                           <div className="text-neutral-950 text-xs font-semibold flex items-center gap-2">
                             <CheckCircle2 size={15} className="text-neutral-950 shrink-0" />
-                            <span>Refleksi tersedia</span>
+                            <span>{course.isJournal ? "Naskah Jurnal Ilmiah tersedia" : "Refleksi 4C tersedia"}</span>
                           </div>
                           <div className="text-neutral-600 text-xs font-medium flex items-center gap-2">
                             <FileText size={15} className="text-neutral-400 shrink-0" />
@@ -271,12 +271,11 @@ export default function Seminar() {
                           <button
                             onClick={() => {
                               setSelectedCourseId(course.id);
-                              if (course.id === "jurnal-ptk") setShowPdfPreview(true);
                               window.scrollTo({ top: 0, behavior: "smooth" });
                             }}
                             className="flex-1 bg-neutral-950 hover:bg-neutral-800 text-white px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all inline-flex items-center justify-center gap-1.5 shadow-xs cursor-pointer group-hover:scale-[1.01]"
                           >
-                            <span>Lihat Refleksi</span>
+                            <span>{course.isJournal ? "Buka Jurnal PTK" : "Lihat Refleksi"}</span>
                             <ArrowRight size={14} />
                           </button>
 
@@ -338,179 +337,282 @@ export default function Seminar() {
               </button>
             </div>
 
-            {/* Special Metadata Box for Jurnal PTK */}
-            {selectedCourse.id === "jurnal-ptk" && selectedCourse.metadata && (
-              <div className="bg-neutral-100 rounded-2xl p-4 sm:p-5 border border-neutral-200 mb-6 flex flex-wrap gap-4 items-center justify-between">
-                <div className="space-y-1">
-                  <span className="text-[10px] uppercase font-bold tracking-wider text-neutral-500">
-                    Penelitian Tindakan Kelas (PTK) • Publikasi Jurnal
-                  </span>
-                  <h4 className="font-bold text-sm text-neutral-950">
-                    {selectedCourse.subtitle}
-                  </h4>
-                  <p className="text-xs text-neutral-600">
-                    {selectedCourse.metadata.peneliti} • {selectedCourse.metadata.sekolah} ({selectedCourse.metadata.sasaran})
-                  </p>
+            {/* KHUSUS JURNAL PTK: Tanpa 4C, Menampilkan Informasi Riset & Dokumen Penuh */}
+            {selectedCourse.isJournal ? (
+              <div className="space-y-8">
+                {/* Research Metadata Box */}
+                {selectedCourse.metadata && (
+                  <div className="bg-white rounded-3xl p-6 sm:p-8 border border-neutral-200 shadow-xs space-y-6">
+                    <div className="flex flex-wrap items-center justify-between gap-4 pb-4 border-b border-neutral-100">
+                      <div>
+                        <span className="text-[10px] uppercase font-bold tracking-wider text-neutral-500 block mb-1">
+                          Penelitian Tindakan Kelas (PTK)
+                        </span>
+                        <h2 className="font-serif font-bold text-lg sm:text-xl text-neutral-950">
+                          {selectedCourse.subtitle}
+                        </h2>
+                      </div>
+                      <span className="px-3.5 py-1.5 bg-neutral-100 text-neutral-800 rounded-full text-xs font-bold border border-neutral-200">
+                        {selectedCourse.metadata.siklus}
+                      </span>
+                    </div>
+
+                    {/* Metadata Grid */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 text-xs">
+                      <div className="bg-neutral-50 p-3.5 rounded-xl border border-neutral-200/80">
+                        <span className="text-neutral-400 font-semibold block uppercase text-[10px]">Peneliti</span>
+                        <span className="text-neutral-900 font-bold text-sm mt-0.5 block">{selectedCourse.metadata.peneliti}</span>
+                      </div>
+                      <div className="bg-neutral-50 p-3.5 rounded-xl border border-neutral-200/80">
+                        <span className="text-neutral-400 font-semibold block uppercase text-[10px]">Lokasi Penelitian</span>
+                        <span className="text-neutral-900 font-bold text-sm mt-0.5 block">{selectedCourse.metadata.sekolah}</span>
+                      </div>
+                      <div className="bg-neutral-50 p-3.5 rounded-xl border border-neutral-200/80 sm:col-span-2 md:col-span-1">
+                        <span className="text-neutral-400 font-semibold block uppercase text-[10px]">Sasaran Siswa</span>
+                        <span className="text-neutral-900 font-bold text-sm mt-0.5 block">{selectedCourse.metadata.sasaran}</span>
+                      </div>
+                    </div>
+
+                    {/* Abstrak */}
+                    {selectedCourse.metadata.abstrak && (
+                      <div className="pt-2">
+                        <h3 className="text-xs uppercase font-bold tracking-wider text-neutral-500 mb-2">
+                          Abstrak Penelitian
+                        </h3>
+                        <p className="text-neutral-700 text-sm leading-relaxed bg-neutral-50 p-4 sm:p-5 rounded-2xl border border-neutral-200/80 text-justify">
+                          {selectedCourse.metadata.abstrak}
+                        </p>
+                      </div>
+                    )}
+
+                    {/* Hasil Tindakan Per Siklus */}
+                    {selectedCourse.metadata.hasilSiklus && (
+                      <div>
+                        <h3 className="text-xs uppercase font-bold tracking-wider text-neutral-500 mb-3">
+                          Progres Ketuntasan Tindakan Siklus PTK
+                        </h3>
+                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                          {selectedCourse.metadata.hasilSiklus.map((hs, idx) => (
+                            <div key={idx} className="bg-white p-4 rounded-2xl border border-neutral-200 shadow-xs flex flex-col justify-between">
+                              <div>
+                                <span className="text-[10px] font-bold text-neutral-400 uppercase tracking-wider">{hs.siklus}</span>
+                                <div className="text-2xl font-serif font-black text-neutral-950 mt-1 mb-2">
+                                  {hs.ketuntasan}
+                                </div>
+                                <p className="text-xs text-neutral-600 leading-snug">{hs.fokus}</p>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                )}
+
+                {/* Bagian Dokumen PDF Jurnal PTK */}
+                <div className="bg-white rounded-3xl p-6 sm:p-8 border border-neutral-200 shadow-xs space-y-5">
+                  <div className="flex flex-wrap items-center justify-between gap-4 pb-4 border-b border-neutral-200">
+                    <div className="flex items-center gap-2.5">
+                      <div className="w-8 h-8 rounded-lg bg-neutral-950 text-white flex items-center justify-center">
+                        <FileText size={18} />
+                      </div>
+                      <div>
+                        <h3 className="font-serif font-bold text-lg text-neutral-950">
+                          Naskah Dokumen Jurnal Ilmiah PTK
+                        </h3>
+                        <p className="text-xs text-neutral-500">Pratinjau lengkap naskah publikasi artikel ilmiah PTK</p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center gap-2">
+                      <a
+                        href={selectedCourse.pdfUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-neutral-100 text-neutral-900 text-xs font-semibold hover:bg-neutral-200 transition-colors border border-neutral-300"
+                      >
+                        <ExternalLink size={14} />
+                        <span>Buka Tab Baru</span>
+                      </a>
+                      <a
+                        href={selectedCourse.pdfUrl}
+                        download
+                        className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-neutral-950 text-white text-xs font-semibold hover:bg-neutral-800 transition-colors"
+                      >
+                        <Download size={14} />
+                        <span>Unduh Naskah PDF</span>
+                      </a>
+                    </div>
+                  </div>
+
+                  {/* Embedded Iframe Document Viewer */}
+                  <div className="w-full h-[650px] rounded-2xl overflow-hidden border border-neutral-200 bg-neutral-100 shadow-inner">
+                    <iframe
+                      src={`${selectedCourse.pdfUrl}#toolbar=1`}
+                      className="w-full h-full"
+                      title="Naskah Jurnal PTK"
+                    />
+                  </div>
                 </div>
-                <div className="flex items-center gap-2">
-                  <span className="px-3 py-1 bg-white border border-neutral-300 rounded-full text-xs font-bold text-neutral-800 shadow-xs">
-                    {selectedCourse.metadata.siklus}
-                  </span>
+              </div>
+            ) : (
+              /* ========================================================= */
+              /* UNTUK MATA KULIAH REFLEKSI: MENGGUNAKAN KERANGKA MODEL 4C */
+              /* ========================================================= */
+              <div>
+                {/* Section Title */}
+                <div className="mt-8 mb-6 pb-2 border-b border-neutral-200 flex items-center justify-between">
+                  <h2 className="text-2xl sm:text-3xl font-serif font-bold text-neutral-950">
+                    Refleksi Model 4C
+                  </h2>
+                  {selectedCourse.pdfUrl && (
+                    <div className="flex items-center gap-2">
+                      <button
+                        onClick={() => setShowPdfPreview(!showPdfPreview)}
+                        className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-neutral-100 text-neutral-900 text-xs font-semibold hover:bg-neutral-200 transition-colors border border-neutral-300 cursor-pointer"
+                      >
+                        <FileText size={13} />
+                        <span>{showPdfPreview ? "Tutup Pratinjau PDF" : "Lihat Dokumen PDF"}</span>
+                      </button>
+                      <a
+                        href={selectedCourse.pdfUrl}
+                        download
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-neutral-950 text-white text-xs font-semibold hover:bg-neutral-800 transition-colors border border-neutral-950"
+                      >
+                        <Download size={13} />
+                        <span className="hidden sm:inline">Unduh PDF</span>
+                      </a>
+                    </div>
+                  )}
+                </div>
+
+                {/* PDF Viewer Accordion */}
+                {showPdfPreview && selectedCourse.pdfUrl && (
+                  <div className="mb-8 bg-white p-4 sm:p-6 rounded-3xl border border-neutral-200 shadow-md">
+                    <div className="flex items-center justify-between mb-3 pb-2 border-b border-neutral-100">
+                      <div className="flex items-center gap-2">
+                        <FileText size={16} className="text-neutral-950" />
+                        <span className="text-xs sm:text-sm font-bold text-neutral-900">
+                          {selectedCourse.pdfTitle || "Dokumen Lembar Refleksi"}
+                        </span>
+                      </div>
+                      <a
+                        href={selectedCourse.pdfUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-xs text-neutral-950 hover:underline inline-flex items-center gap-1 font-semibold"
+                      >
+                        Buka Tab Baru <ExternalLink size={12} />
+                      </a>
+                    </div>
+                    <div className="w-full h-[550px] rounded-2xl overflow-hidden border border-neutral-200 bg-neutral-100">
+                      <iframe
+                        src={`${selectedCourse.pdfUrl}#toolbar=1`}
+                        className="w-full h-full"
+                        title={`PDF ${selectedCourse.title}`}
+                      />
+                    </div>
+                  </div>
+                )}
+
+                {/* The 4 Vertically Stacked Cards (Monochrome Elegan) */}
+                <div className="space-y-5">
+                  
+                  {/* TAHAP 1: Connection */}
+                  <div className="bg-white rounded-2xl border border-neutral-200 p-6 sm:p-7 shadow-xs hover:border-neutral-300 transition-all">
+                    <div className="flex items-start gap-4 mb-3">
+                      <div className="w-11 h-11 rounded-full bg-neutral-950 text-white flex items-center justify-center shrink-0 shadow-xs mt-0.5">
+                        <Network size={20} />
+                      </div>
+                      <div className="flex-1">
+                        <span className="text-[10px] tracking-widest uppercase font-bold text-neutral-400 block mb-0.5">
+                          TAHAP 1
+                        </span>
+                        <h3 className="font-serif font-bold text-xl sm:text-2xl text-neutral-950 leading-tight">
+                          Connection
+                        </h3>
+                      </div>
+                    </div>
+                    <p className="text-xs sm:text-sm text-neutral-500 font-medium italic mb-3">
+                      {FOUR_C_SUBTITLES.connection}
+                    </p>
+                    <p className="text-neutral-700 text-sm leading-relaxed whitespace-pre-line">
+                      {selectedCourse.fourC?.connection}
+                    </p>
+                  </div>
+
+                  {/* TAHAP 2: Challenge */}
+                  <div className="bg-white rounded-2xl border border-neutral-200 p-6 sm:p-7 shadow-xs hover:border-neutral-300 transition-all">
+                    <div className="flex items-start gap-4 mb-3">
+                      <div className="w-11 h-11 rounded-full bg-neutral-950 text-white flex items-center justify-center shrink-0 shadow-xs mt-0.5">
+                        <Target size={20} />
+                      </div>
+                      <div className="flex-1">
+                        <span className="text-[10px] tracking-widest uppercase font-bold text-neutral-400 block mb-0.5">
+                          TAHAP 2
+                        </span>
+                        <h3 className="font-serif font-bold text-xl sm:text-2xl text-neutral-950 leading-tight">
+                          Challenge
+                        </h3>
+                      </div>
+                    </div>
+                    <p className="text-xs sm:text-sm text-neutral-500 font-medium italic mb-3">
+                      {FOUR_C_SUBTITLES.challenge}
+                    </p>
+                    <p className="text-neutral-700 text-sm leading-relaxed whitespace-pre-line">
+                      {selectedCourse.fourC?.challenge}
+                    </p>
+                  </div>
+
+                  {/* TAHAP 3: Concept */}
+                  <div className="bg-white rounded-2xl border border-neutral-200 p-6 sm:p-7 shadow-xs hover:border-neutral-300 transition-all">
+                    <div className="flex items-start gap-4 mb-3">
+                      <div className="w-11 h-11 rounded-full bg-neutral-950 text-white flex items-center justify-center shrink-0 shadow-xs mt-0.5">
+                        <Lightbulb size={20} />
+                      </div>
+                      <div className="flex-1">
+                        <span className="text-[10px] tracking-widest uppercase font-bold text-neutral-400 block mb-0.5">
+                          TAHAP 3
+                        </span>
+                        <h3 className="font-serif font-bold text-xl sm:text-2xl text-neutral-950 leading-tight">
+                          Concept
+                        </h3>
+                      </div>
+                    </div>
+                    <p className="text-xs sm:text-sm text-neutral-500 font-medium italic mb-3">
+                      {FOUR_C_SUBTITLES.concept}
+                    </p>
+                    <p className="text-neutral-700 text-sm leading-relaxed whitespace-pre-line">
+                      {selectedCourse.fourC?.concept}
+                    </p>
+                  </div>
+
+                  {/* TAHAP 4: Change */}
+                  <div className="bg-white rounded-2xl border border-neutral-200 p-6 sm:p-7 shadow-xs hover:border-neutral-300 transition-all">
+                    <div className="flex items-start gap-4 mb-3">
+                      <div className="w-11 h-11 rounded-full bg-neutral-950 text-white flex items-center justify-center shrink-0 shadow-xs mt-0.5">
+                        <RefreshCw size={20} />
+                      </div>
+                      <div className="flex-1">
+                        <span className="text-[10px] tracking-widest uppercase font-bold text-neutral-400 block mb-0.5">
+                          TAHAP 4
+                        </span>
+                        <h3 className="font-serif font-bold text-xl sm:text-2xl text-neutral-950 leading-tight">
+                          Change
+                        </h3>
+                      </div>
+                    </div>
+                    <p className="text-xs sm:text-sm text-neutral-500 font-medium italic mb-3">
+                      {FOUR_C_SUBTITLES.change}
+                    </p>
+                    <p className="text-neutral-700 text-sm leading-relaxed whitespace-pre-line">
+                      {selectedCourse.fourC?.change}
+                    </p>
+                  </div>
+
                 </div>
               </div>
             )}
-
-            {/* Section Title */}
-            <div className="mt-8 mb-6 pb-2 border-b border-neutral-200 flex items-center justify-between">
-              <h2 className="text-2xl sm:text-3xl font-serif font-bold text-neutral-950">
-                Refleksi Model 4C
-              </h2>
-              {selectedCourse.pdfUrl && (
-                <div className="flex items-center gap-2">
-                  <button
-                    onClick={() => setShowPdfPreview(!showPdfPreview)}
-                    className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-neutral-100 text-neutral-900 text-xs font-semibold hover:bg-neutral-200 transition-colors border border-neutral-300 cursor-pointer"
-                  >
-                    <FileText size={13} />
-                    <span>{showPdfPreview ? "Tutup Pratinjau PDF" : "Lihat Dokumen PDF"}</span>
-                  </button>
-                  <a
-                    href={selectedCourse.pdfUrl}
-                    download
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-neutral-950 text-white text-xs font-semibold hover:bg-neutral-800 transition-colors border border-neutral-950"
-                  >
-                    <Download size={13} />
-                    <span className="hidden sm:inline">Unduh PDF</span>
-                  </a>
-                </div>
-              )}
-            </div>
-
-            {/* PDF Viewer Accordion */}
-            {showPdfPreview && selectedCourse.pdfUrl && (
-              <div className="mb-8 bg-white p-4 sm:p-6 rounded-3xl border border-neutral-200 shadow-md">
-                <div className="flex items-center justify-between mb-3 pb-2 border-b border-neutral-100">
-                  <div className="flex items-center gap-2">
-                    <FileText size={16} className="text-neutral-950" />
-                    <span className="text-xs sm:text-sm font-bold text-neutral-900">
-                      {selectedCourse.pdfTitle || "Dokumen Lembar Refleksi"}
-                    </span>
-                  </div>
-                  <a
-                    href={selectedCourse.pdfUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-xs text-neutral-950 hover:underline inline-flex items-center gap-1 font-semibold"
-                  >
-                    Buka Tab Baru <ExternalLink size={12} />
-                  </a>
-                </div>
-                <div className="w-full h-[550px] rounded-2xl overflow-hidden border border-neutral-200 bg-neutral-100">
-                  <iframe
-                    src={`${selectedCourse.pdfUrl}#toolbar=1`}
-                    className="w-full h-full"
-                    title={`PDF ${selectedCourse.title}`}
-                  />
-                </div>
-              </div>
-            )}
-
-            {/* The 4 Vertically Stacked Cards (Monochrome Elegan) */}
-            <div className="space-y-5">
-              
-              {/* TAHAP 1: Connection */}
-              <div className="bg-white rounded-2xl border border-neutral-200 p-6 sm:p-7 shadow-xs hover:border-neutral-300 transition-all">
-                <div className="flex items-start gap-4 mb-3">
-                  <div className="w-11 h-11 rounded-full bg-neutral-950 text-white flex items-center justify-center shrink-0 shadow-xs mt-0.5">
-                    <Network size={20} />
-                  </div>
-                  <div className="flex-1">
-                    <span className="text-[10px] tracking-widest uppercase font-bold text-neutral-400 block mb-0.5">
-                      TAHAP 1
-                    </span>
-                    <h3 className="font-serif font-bold text-xl sm:text-2xl text-neutral-950 leading-tight">
-                      Connection
-                    </h3>
-                  </div>
-                </div>
-                <p className="text-xs sm:text-sm text-neutral-500 font-medium italic mb-3">
-                  {FOUR_C_SUBTITLES.connection}
-                </p>
-                <p className="text-neutral-700 text-sm leading-relaxed whitespace-pre-line">
-                  {selectedCourse.fourC?.connection}
-                </p>
-              </div>
-
-              {/* TAHAP 2: Challenge */}
-              <div className="bg-white rounded-2xl border border-neutral-200 p-6 sm:p-7 shadow-xs hover:border-neutral-300 transition-all">
-                <div className="flex items-start gap-4 mb-3">
-                  <div className="w-11 h-11 rounded-full bg-neutral-950 text-white flex items-center justify-center shrink-0 shadow-xs mt-0.5">
-                    <Target size={20} />
-                  </div>
-                  <div className="flex-1">
-                    <span className="text-[10px] tracking-widest uppercase font-bold text-neutral-400 block mb-0.5">
-                      TAHAP 2
-                    </span>
-                    <h3 className="font-serif font-bold text-xl sm:text-2xl text-neutral-950 leading-tight">
-                      Challenge
-                    </h3>
-                  </div>
-                </div>
-                <p className="text-xs sm:text-sm text-neutral-500 font-medium italic mb-3">
-                  {FOUR_C_SUBTITLES.challenge}
-                </p>
-                <p className="text-neutral-700 text-sm leading-relaxed whitespace-pre-line">
-                  {selectedCourse.fourC?.challenge}
-                </p>
-              </div>
-
-              {/* TAHAP 3: Concept */}
-              <div className="bg-white rounded-2xl border border-neutral-200 p-6 sm:p-7 shadow-xs hover:border-neutral-300 transition-all">
-                <div className="flex items-start gap-4 mb-3">
-                  <div className="w-11 h-11 rounded-full bg-neutral-950 text-white flex items-center justify-center shrink-0 shadow-xs mt-0.5">
-                    <Lightbulb size={20} />
-                  </div>
-                  <div className="flex-1">
-                    <span className="text-[10px] tracking-widest uppercase font-bold text-neutral-400 block mb-0.5">
-                      TAHAP 3
-                    </span>
-                    <h3 className="font-serif font-bold text-xl sm:text-2xl text-neutral-950 leading-tight">
-                      Concept
-                    </h3>
-                  </div>
-                </div>
-                <p className="text-xs sm:text-sm text-neutral-500 font-medium italic mb-3">
-                  {FOUR_C_SUBTITLES.concept}
-                </p>
-                <p className="text-neutral-700 text-sm leading-relaxed whitespace-pre-line">
-                  {selectedCourse.fourC?.concept}
-                </p>
-              </div>
-
-              {/* TAHAP 4: Change */}
-              <div className="bg-white rounded-2xl border border-neutral-200 p-6 sm:p-7 shadow-xs hover:border-neutral-300 transition-all">
-                <div className="flex items-start gap-4 mb-3">
-                  <div className="w-11 h-11 rounded-full bg-neutral-950 text-white flex items-center justify-center shrink-0 shadow-xs mt-0.5">
-                    <RefreshCw size={20} />
-                  </div>
-                  <div className="flex-1">
-                    <span className="text-[10px] tracking-widest uppercase font-bold text-neutral-400 block mb-0.5">
-                      TAHAP 4
-                    </span>
-                    <h3 className="font-serif font-bold text-xl sm:text-2xl text-neutral-950 leading-tight">
-                      Change
-                    </h3>
-                  </div>
-                </div>
-                <p className="text-xs sm:text-sm text-neutral-500 font-medium italic mb-3">
-                  {FOUR_C_SUBTITLES.change}
-                </p>
-                <p className="text-neutral-700 text-sm leading-relaxed whitespace-pre-line">
-                  {selectedCourse.fourC?.change}
-                </p>
-              </div>
-
-            </div>
 
             {/* Bottom Back Button */}
             <div className="mt-8 pt-6 border-t border-neutral-200 flex items-center justify-between">
