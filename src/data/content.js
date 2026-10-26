@@ -8,10 +8,11 @@ export const NAV_LINKS = [
     href: "/seminar",
     hasDropdown: true,
     dropdownItems: [
-      { key: "semua", label: "Semua Refleksi", desc: "Ringkasan 4 bagian seminar & refleksi", href: "/seminar?tab=semua" },
+      { key: "semua", label: "Semua Refleksi", desc: "Ringkasan semua bagian seminar & refleksi", href: "/seminar?tab=semua" },
       { key: "visi", label: "Visi Pendidikan (LK 1)", desc: "Visi pendidikan & desain masa depan guru", href: "/seminar?tab=visi" },
       { key: "smt-1", label: "LK Semester 1 (LK 2)", desc: "Refleksi mata kuliah Semester 1", href: "/seminar?tab=smt-1" },
       { key: "smt-2", label: "LK Semester 2 (LK 3)", desc: "Refleksi mata kuliah Semester 2", href: "/seminar?tab=smt-2" },
+      { key: "ptk", label: "Jurnal PTK", desc: "Jurnal Penelitian Tindakan Kelas & Pratinjau Dokumen", href: "/seminar?tab=ptk" },
       { key: "ppg", label: "Refleksi PPG", desc: "Refleksi komprehensif pengalaman PPG", href: "/seminar?tab=ppg" },
     ]
   },
@@ -407,11 +408,39 @@ export const VISI_PENDIDIKAN_DATA = {
   }
 };
 
-// 9. Kompatibilitas SEMINAR_SECTIONS & SEMINAR_LIST untuk referensi komponen lain
+// 9. Data Jurnal Penelitian Tindakan Kelas (PTK)
+export const JURNAL_PTK_DATA = {
+  id: "jurnal-ptk",
+  number: "PTK",
+  title: "Jurnal Penelitian Tindakan Kelas (PTK)",
+  subtitle: "Peningkatan Hasil Belajar Siswa Melalui Model Pembelajaran Berbasis Proyek (PjBL)",
+  description: "Laporan hasil Penelitian Tindakan Kelas (PTK) pada mata pelajaran Informatika kejuruan di SMK Negeri 2 Salatiga lengkap dengan publikasi naskah artikel jurnal ilmiah.",
+  pdfUrl: "/docs/Jurnal_PTK.pdf",
+  pdfTitle: "Naskah Jurnal Ilmiah Penelitian Tindakan Kelas (PTK)",
+  docCount: 1,
+  hasReflection: false,
+  isJournal: true,
+  metadata: {
+    peneliti: "Tantri Fadhillah Asri, S.Kom",
+    sekolah: "SMK Negeri 2 Salatiga",
+    mataPelajaran: "Dasar-Dasar Teknik Jaringan Komputer & Telekomunikasi (IoT)",
+    sasaran: "Kelas X TKJ",
+    siklus: "3 Siklus (Perencanaan, Pelaksanaan, Pengamatan, Refleksi)",
+    abstrak: "Penelitian Tindakan Kelas ini bertujuan untuk meningkatkan keaktifan, pemahaman konsep, dan hasil belajar peserta didik kelas X TKJ SMK Negeri 2 Salatiga pada materi Internet of Things (IoT) melalui implementasi model Project-Based Learning (PjBL) berbantuan mikrokontroler. Penelitian dilaksanakan dalam 3 siklus dengan model Kemmis & McTaggart (Plan, Act, Observe, Reflect). Hasil penelitian menunjukkan peningkatan ketuntasan belajar klasikal dari Siklus I (62,5%), Siklus II (78,1%), hingga Siklus III (90,6%) disertai peningkatan keterampilan kolaboratif dan pemecahan masalah teknis siswa.",
+    hasilSiklus: [
+      { siklus: "Siklus I", ketuntasan: "62.5%", fokus: "Pengenalan sensor dasar & pembentukan kelompok kolaboratif" },
+      { siklus: "Siklus II", ketuntasan: "78.1%", fokus: "Pemberian scaffolding bertahap & panduan troubleshooting IoT" },
+      { siklus: "Siklus III", ketuntasan: "90.6%", fokus: "Penyelesaian proyek mandiri & presentasi hasil karya di aula sekolah" }
+    ]
+  }
+};
+
+// 10. Kompatibilitas SEMINAR_SECTIONS & SEMINAR_LIST untuk referensi komponen lain
 export const SEMINAR_SECTIONS = [
-  { key: "semua", label: "Semua Refleksi", desc: "Ringkasan tiga bagian refleksi" },
+  { key: "semua", label: "Semua Refleksi", desc: "Ringkasan semua bagian seminar & refleksi" },
   { key: "smt-1", label: "Semester 1", desc: "Refleksi mata kuliah Semester 1" },
   { key: "smt-2", label: "Semester 2", desc: "Refleksi mata kuliah Semester 2" },
+  { key: "ptk", label: "Jurnal PTK", desc: "Jurnal Penelitian Tindakan Kelas & Dokumen" },
   { key: "ppg", label: "Keseluruhan PPG", desc: "Refleksi pengalaman belajar selama PPG" },
   { key: "visi", label: "Visi Pendidikan", desc: "Visi untuk pendidikan & peran guru" },
 ];
