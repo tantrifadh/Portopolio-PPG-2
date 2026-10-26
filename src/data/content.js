@@ -423,14 +423,14 @@ export const JURNAL_PTK_DATA = {
   metadata: {
     peneliti: "Tantri Fadhillah Asri, S.Kom",
     sekolah: "SMK Negeri 2 Salatiga",
-    mataPelajaran: "Dasar-Dasar Teknik Jaringan Komputer & Telekomunikasi (IoT)",
-    sasaran: "Kelas X TKJ",
-    siklus: "3 Siklus (Perencanaan, Pelaksanaan, Pengamatan, Refleksi)",
-    abstrak: "Penelitian Tindakan Kelas ini bertujuan untuk meningkatkan keaktifan, pemahaman konsep, dan hasil belajar peserta didik kelas X TKJ SMK Negeri 2 Salatiga pada materi Internet of Things (IoT) melalui implementasi model Project-Based Learning (PjBL) berbantuan mikrokontroler. Penelitian dilaksanakan dalam 3 siklus dengan model Kemmis & McTaggart (Plan, Act, Observe, Reflect). Hasil penelitian menunjukkan peningkatan ketuntasan belajar klasikal dari Siklus I (62,5%), Siklus II (78,1%), hingga Siklus III (90,6%) disertai peningkatan keterampilan kolaboratif dan pemecahan masalah teknis siswa.",
+    mataPelajaran: "Dasar-Dasar Program Keahlian (DPK)",
+    sasaran: "Kelas X TKJ A",
+    siklus: "2 Siklus ",
+    abstrak: "Pemahaman media transmisi pada siswa kelas X Teknik Komputer dan Jaringan (TKJ) belum merata sehingga diperlukan pembelajaran yang menghubungkan konsep dengan pengalaman praktik. Penelitian ini bertujuan mendeskripsikan penerapan pembelajaran mendalam berbasis proyek melalui experiential learning dan menganalisis peningkatan pemahaman media transmisi siswa kelas X TKJ A SMK Negeri 2 Salatiga. Penelitian tindakan kelas dilaksanakan dalam dua siklus terhadap 36 siswa: siklus I berupa penjelasan materi media transmisi dan siklus II berupa proyek praktik crimping kabel LAN. Skor tes pemahaman dianalisis dengan ketuntasan klasikal, uji normalitas Shapiro-Wilk, uji Wilcoxon signed-rank, dan uji N-gain. Ketuntasan klasikal meningkat dari 58,33% pada pra siklus menjadi 75,00% pada siklus I dan 91,67% pada siklus II. Data tidak berdistribusi normal (p < 0,05) dan uji Wilcoxon menunjukkan peningkatan yang signifikan pada seluruh pasangan tahap (p = 0,0269; 0,0020; dan 0,0264). Rata-rata N-gain sebesar 0,442 (kurang efektif) pada siklus I dan 0,590 (cukup efektif) pada siklus II, keduanya berkategori sedang. Pembelajaran mendalam berbasis proyek melalui experiential learning meningkatkan pemahaman media transmisi secara bertahap, dan praktik crimping meningkatkan efektivitas tindakan.",
     hasilSiklus: [
-      { siklus: "Siklus I", ketuntasan: "62.5%", fokus: "Pengenalan sensor dasar & pembentukan kelompok kolaboratif" },
-      { siklus: "Siklus II", ketuntasan: "78.1%", fokus: "Pemberian scaffolding bertahap & panduan troubleshooting IoT" },
-      { siklus: "Siklus III", ketuntasan: "90.6%", fokus: "Penyelesaian proyek mandiri & presentasi hasil karya di aula sekolah" }
+      { siklus: "Pra-Siklus", ketuntasan: "58,33%", fokus: "Pretest Pemahaman Materi Media Transmisi"},
+      { siklus: "Siklus I", ketuntasan: "75%", fokus: "Materi Media Transmisi berbantuan krimpinglab" },
+      { siklus: "Siklus II", ketuntasan: "91,67%", fokus: "Praktik Krimping Kabel LAN" }
     ]
   }
 };
