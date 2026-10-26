@@ -13,20 +13,23 @@ import {
   Lightbulb, 
   RefreshCw,
   Home,
-  ChevronRight
+  ChevronRight,
+  X,
+  BookOpen
 } from "lucide-react";
 import { 
   SEMESTER_1_COURSES, 
   SEMESTER_2_COURSES, 
   KESELURUHAN_PPG_DATA, 
   VISI_PENDIDIKAN_DATA,
+  JURNAL_PTK_DATA,
   FOUR_C_SUBTITLES
 } from "../data/content";
 
 export default function Seminar() {
   const location = useLocation();
 
-  // Active Tab: "smt-1" | "smt-2" | "ppg" | "visi" | "semua"
+  // Active Tab: "smt-1" | "smt-2" | "ptk" | "ppg" | "visi" | "semua"
   const [activeTab, setActiveTab] = useState("smt-1");
   // Active Course for Detail View (null = show grid list, courseId = show 4C detail view)
   const [selectedCourseId, setSelectedCourseId] = useState(null);
@@ -34,12 +37,14 @@ export default function Seminar() {
   const [searchQuery, setSearchQuery] = useState("");
   // PDF preview modal / collapse toggle
   const [showPdfPreview, setShowPdfPreview] = useState(false);
+  // Quick View PDF modal for direct document viewing
+  const [modalPdfData, setModalPdfData] = useState(null);
 
   // Sync tab with URL query parameter ?tab=...
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     const tabParam = params.get("tab");
-    if (tabParam && ["smt-1", "smt-2", "ppg", "visi", "semua"].includes(tabParam)) {
+    if (tabParam && ["smt-1", "smt-2", "ptk", "ppg", "visi", "semua"].includes(tabParam)) {
       setActiveTab(tabParam);
       setSelectedCourseId(null);
     }
@@ -50,6 +55,11 @@ export default function Seminar() {
     return [
       ...SEMESTER_1_COURSES,
       ...SEMESTER_2_COURSES,
+      {
+        ...JURNAL_PTK_DATA,
+        semester: "PTK",
+        hasReflection: true,
+      },
       {
         ...KESELURUHAN_PPG_DATA,
         semester: "PPG",
@@ -67,6 +77,7 @@ export default function Seminar() {
   const tabCourses = useMemo(() => {
     if (activeTab === "smt-1") return SEMESTER_1_COURSES;
     if (activeTab === "smt-2") return SEMESTER_2_COURSES;
+    if (activeTab === "ptk") return [{ ...JURNAL_PTK_DATA, semester: "PTK", hasReflection: true }];
     if (activeTab === "ppg") return [{ ...KESELURUHAN_PPG_DATA, semester: "PPG", hasReflection: true }];
     if (activeTab === "visi") return [{ ...VISI_PENDIDIKAN_DATA, semester: "Visi", hasReflection: true }];
     return allCourses;
@@ -79,7 +90,7 @@ export default function Seminar() {
     return tabCourses.filter(c => 
       c.title.toLowerCase().includes(query) ||
       (c.code && c.code.toLowerCase().includes(query)) ||
-      c.description.toLowerCase().includes(query)
+      (c.description && c.description.toLowerCase().includes(query))
     );
   }, [tabCourses, searchQuery]);
 
@@ -94,6 +105,7 @@ export default function Seminar() {
     switch (activeTab) {
       case "smt-1": return "Semester 1";
       case "smt-2": return "Semester 2";
+      case "ptk": return "Jurnal PTK";
       case "ppg": return "Keseluruhan PPG";
       case "visi": return "Visi Pendidikan";
       case "semua": return "Semua Refleksi";
@@ -106,6 +118,7 @@ export default function Seminar() {
     switch (activeTab) {
       case "smt-1": return "Refleksi Mata Kuliah Semester 1";
       case "smt-2": return "Refleksi Mata Kuliah Semester 2";
+      case "ptk": return "Jurnal Penelitian Tindakan Kelas (PTK)";
       case "ppg": return "Refleksi Pengalaman Belajar Selama PPG";
       case "visi": return "Visi Pendidikan di Indonesia & Sebagai Guru";
       case "semua": return "Semua Refleksi Mata Kuliah PPG";
@@ -154,6 +167,7 @@ export default function Seminar() {
             { key: "semua", label: "Semua Refleksi" },
             { key: "smt-1", label: "Semester 1" },
             { key: "smt-2", label: "Semester 2" },
+            { key: "ptk", label: "Jurnal PTK" },
             { key: "ppg", label: "Keseluruhan PPG" },
             { key: "visi", label: "Visi Pendidikan" }
           ].map((tab) => {
@@ -252,17 +266,31 @@ export default function Seminar() {
                           </div>
                         </div>
 
-                        {/* Action Pill Button: Solid Elegant Black */}
-                        <button
-                          onClick={() => {
-                            setSelectedCourseId(course.id);
-                            window.scrollTo({ top: 0, behavior: "smooth" });
-                          }}
-                          className="w-full sm:w-auto bg-neutral-950 hover:bg-neutral-800 text-white px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all inline-flex items-center justify-center gap-2 shadow-xs cursor-pointer group-hover:scale-[1.02]"
-                        >
-                          <span>Lihat Refleksi</span>
-                          <ArrowRight size={14} />
-                        </button>
+                        {/* Action Buttons: Solid Elegant Black & Direct Document Button */}
+                        <div className="flex items-center gap-2">
+                          <button
+                            onClick={() => {
+                              setSelectedCourseId(course.id);
+                              if (course.id === "jurnal-ptk") setShowPdfPreview(true);
+                              window.scrollTo({ top: 0, behavior: "smooth" });
+                            }}
+                            className="flex-1 bg-neutral-950 hover:bg-neutral-800 text-white px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all inline-flex items-center justify-center gap-1.5 shadow-xs cursor-pointer group-hover:scale-[1.01]"
+                          >
+                            <span>Lihat Refleksi</span>
+                            <ArrowRight size={14} />
+                          </button>
+
+                          {course.pdfUrl && (
+                            <button
+                              onClick={() => setModalPdfData(course)}
+                              className="px-3.5 py-2.5 rounded-full border border-neutral-300 text-neutral-800 hover:bg-neutral-100 text-xs font-semibold transition-all inline-flex items-center justify-center gap-1.5 cursor-pointer shrink-0"
+                              title="Lihat Dokumen PDF"
+                            >
+                              <FileText size={14} />
+                              <span className="hidden sm:inline">Dokumen</span>
+                            </button>
+                          )}
+                        </div>
                       </div>
                     </div>
                   );
@@ -309,6 +337,28 @@ export default function Seminar() {
                 Kembali ke daftar mata kuliah
               </button>
             </div>
+
+            {/* Special Metadata Box for Jurnal PTK */}
+            {selectedCourse.id === "jurnal-ptk" && selectedCourse.metadata && (
+              <div className="bg-neutral-100 rounded-2xl p-4 sm:p-5 border border-neutral-200 mb-6 flex flex-wrap gap-4 items-center justify-between">
+                <div className="space-y-1">
+                  <span className="text-[10px] uppercase font-bold tracking-wider text-neutral-500">
+                    Penelitian Tindakan Kelas (PTK) • Publikasi Jurnal
+                  </span>
+                  <h4 className="font-bold text-sm text-neutral-950">
+                    {selectedCourse.subtitle}
+                  </h4>
+                  <p className="text-xs text-neutral-600">
+                    {selectedCourse.metadata.peneliti} • {selectedCourse.metadata.sekolah} ({selectedCourse.metadata.sasaran})
+                  </p>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="px-3 py-1 bg-white border border-neutral-300 rounded-full text-xs font-bold text-neutral-800 shadow-xs">
+                    {selectedCourse.metadata.siklus}
+                  </span>
+                </div>
+              </div>
+            )}
 
             {/* Section Title */}
             <div className="mt-8 mb-6 pb-2 border-b border-neutral-200 flex items-center justify-between">
@@ -479,6 +529,63 @@ export default function Seminar() {
         )}
 
       </div>
+
+      {/* Modal Pratinjau Dokumen PDF Penuh */}
+      {modalPdfData && (
+        <div className="fixed inset-0 z-[120] flex items-center justify-center p-3 sm:p-6 bg-neutral-950/80 backdrop-blur-sm animate-in fade-in duration-150">
+          <div className="bg-white rounded-3xl w-full max-w-5xl h-[90vh] flex flex-col overflow-hidden shadow-2xl border border-neutral-200">
+            {/* Modal Header */}
+            <div className="p-4 sm:p-5 border-b border-neutral-200 flex items-center justify-between bg-neutral-50">
+              <div className="flex items-center gap-3">
+                <div className="w-9 h-9 rounded-xl bg-neutral-950 text-white flex items-center justify-center shrink-0">
+                  <FileText size={18} />
+                </div>
+                <div>
+                  <h3 className="font-bold text-sm sm:text-base text-neutral-950 line-clamp-1">
+                    {modalPdfData.pdfTitle || modalPdfData.title}
+                  </h3>
+                  <p className="text-xs text-neutral-500">Pratinjau Dokumen Resmi PPG</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-2">
+                <a
+                  href={modalPdfData.pdfUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 text-neutral-700 hover:text-neutral-950 hover:bg-neutral-200 rounded-lg transition-colors text-xs font-semibold flex items-center gap-1"
+                  title="Buka di tab baru"
+                >
+                  <ExternalLink size={16} />
+                  <span className="hidden sm:inline">Tab Baru</span>
+                </a>
+                <a
+                  href={modalPdfData.pdfUrl}
+                  download
+                  className="px-3.5 py-1.5 bg-neutral-950 text-white rounded-xl text-xs font-semibold hover:bg-neutral-800 transition-colors flex items-center gap-1.5"
+                >
+                  <Download size={14} />
+                  <span>Unduh</span>
+                </a>
+                <button
+                  onClick={() => setModalPdfData(null)}
+                  className="p-2 text-neutral-500 hover:text-neutral-950 hover:bg-neutral-200 rounded-lg transition-colors cursor-pointer"
+                  aria-label="Tutup Pratinjau"
+                >
+                  <X size={20} />
+                </button>
+              </div>
+            </div>
+            {/* Iframe Document View */}
+            <div className="flex-1 bg-neutral-100">
+              <iframe
+                src={`${modalPdfData.pdfUrl}#toolbar=1`}
+                className="w-full h-full border-none"
+                title={`Preview ${modalPdfData.title}`}
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

@@ -8,10 +8,11 @@ export const NAV_LINKS = [
     href: "/seminar",
     hasDropdown: true,
     dropdownItems: [
-      { key: "semua", label: "Semua Refleksi", desc: "Ringkasan 4 bagian seminar & refleksi", href: "/seminar?tab=semua" },
+      { key: "semua", label: "Semua Refleksi", desc: "Ringkasan semua bagian seminar & refleksi", href: "/seminar?tab=semua" },
       { key: "visi", label: "Visi Pendidikan (LK 1)", desc: "Visi pendidikan & desain masa depan guru", href: "/seminar?tab=visi" },
       { key: "smt-1", label: "LK Semester 1 (LK 2)", desc: "Refleksi mata kuliah Semester 1", href: "/seminar?tab=smt-1" },
       { key: "smt-2", label: "LK Semester 2 (LK 3)", desc: "Refleksi mata kuliah Semester 2", href: "/seminar?tab=smt-2" },
+      { key: "ptk", label: "Jurnal PTK", desc: "Jurnal Penelitian Tindakan Kelas & Pratinjau Dokumen", href: "/seminar?tab=ptk" },
       { key: "ppg", label: "Refleksi PPG", desc: "Refleksi komprehensif pengalaman PPG", href: "/seminar?tab=ppg" },
     ]
   },
@@ -407,11 +408,38 @@ export const VISI_PENDIDIKAN_DATA = {
   }
 };
 
-// 9. Kompatibilitas SEMINAR_SECTIONS & SEMINAR_LIST untuk referensi komponen lain
+// 9. Data Jurnal Penelitian Tindakan Kelas (PTK)
+export const JURNAL_PTK_DATA = {
+  id: "jurnal-ptk",
+  number: "PTK",
+  title: "Jurnal Penelitian Tindakan Kelas (PTK)",
+  subtitle: "Peningkatan Hasil Belajar Siswa Melalui Model Pembelajaran Berbasis Proyek (PjBL)",
+  description: "Laporan hasil Penelitian Tindakan Kelas (PTK) pada mata pelajaran Informatika kejuruan di SMK Negeri 2 Salatiga lengkap dengan publikasi naskah artikel jurnal ilmiah.",
+  pdfUrl: "/docs/Jurnal_PTK.pdf",
+  pdfTitle: "Naskah Jurnal Ilmiah Penelitian Tindakan Kelas (PTK)",
+  docCount: 1,
+  hasReflection: true,
+  metadata: {
+    peneliti: "Tantri Fadhillah Asri, S.Kom",
+    sekolah: "SMK Negeri 2 Salatiga",
+    mataPelajaran: "Dasar-Dasar Teknik Jaringan Komputer & Telekomunikasi (IoT)",
+    sasaran: "Kelas X TKJ",
+    siklus: "3 Siklus (Perencanaan, Pelaksanaan, Pengamatan, Refleksi)"
+  },
+  fourC: {
+    connection: "Menghubungkan permasalahan nyata rendahnya keaktifan dan pemahaman logika perakitan sirkuit IoT siswa kelas X TKJ dengan teori konstruktivisme dan metodologi Penelitian Tindakan Kelas (PTK). Sebagai calon pendidik profesional, PTK menjadi jembatan praktis untuk mentransformasikan refleksi kelas menjadi perbaikan tindakan pembelajaran yang sistematis, terukur, dan berbasis bukti nyata.",
+    challenge: "Tantangan utama selama pelaksanaan siklus tindakan adalah merancang lembar observasi aktivitas belajar yang reliabel, menjaga objektivitas saat membagi peran antara pengajar utama materi mikrokontroler dengan pengamat respons afektif siswa, serta ketepatan merancang intervensi perbaikan dari siklus 1 ke siklus berikutnya.",
+    concept: "1) Model Spiral PTK Kemmis & McTaggart (Plan, Act, Observe, Reflect). 2) Penerapan Project-Based Learning (PjBL) berorientasi produk autentik riil. 3) Kriteria Ketercapaian Tujuan Pembelajaran (KKTP) ranah kognitif, psikomotorik, dan sikap Profil Pelajar Pancasila. 4) Triangulasi data instrumen evaluasi (observasi kelas, tes formatif, dan angket respon kepuasan belajar).",
+    change: "Membiasakan budaya meneliti dan merefleksikan praktik mengajar sendiri secara berkelanjutan (teacher as researcher). Saya tidak lagi hanya mengandalkan intuisi semata, melainkan menganalisis data capaian kelas untuk menentukan diferensiasi materi, serta mendiseminasikan hasil penelitian ini ke dalam forum seminar profesi guru."
+  }
+};
+
+// 10. Kompatibilitas SEMINAR_SECTIONS & SEMINAR_LIST untuk referensi komponen lain
 export const SEMINAR_SECTIONS = [
-  { key: "semua", label: "Semua Refleksi", desc: "Ringkasan tiga bagian refleksi" },
+  { key: "semua", label: "Semua Refleksi", desc: "Ringkasan semua bagian seminar & refleksi" },
   { key: "smt-1", label: "Semester 1", desc: "Refleksi mata kuliah Semester 1" },
   { key: "smt-2", label: "Semester 2", desc: "Refleksi mata kuliah Semester 2" },
+  { key: "ptk", label: "Jurnal PTK", desc: "Jurnal Penelitian Tindakan Kelas & Dokumen" },
   { key: "ppg", label: "Keseluruhan PPG", desc: "Refleksi pengalaman belajar selama PPG" },
   { key: "visi", label: "Visi Pendidikan", desc: "Visi untuk pendidikan & peran guru" },
 ];
