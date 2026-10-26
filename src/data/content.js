@@ -54,12 +54,12 @@ export const ARTEFAK_LIST = [
   }
 ];
 
-// 3. Data Penilaian
-export const DATA_NILAI = [
-  { siklus: "Siklus 1", nilai: 82, catatan: "Perlu penguatan pada manajemen kelas dan instruksi." },
-  { siklus: "Siklus 2", nilai: 88, catatan: "Penggunaan media sudah sangat interaktif dan membantu siswa." },
-  { siklus: "Siklus 3", nilai: 95, catatan: "Sangat baik dalam menerapkan pembelajaran berdiferensiasi." },
-];
+// // 3. Data Penilaian
+// export const DATA_NILAI = [
+//   { siklus: "Siklus 1", nilai: 82, catatan: "Perlu penguatan pada manajemen kelas dan instruksi." },
+//   { siklus: "Siklus 2", nilai: 88, catatan: "Penggunaan media sudah sangat interaktif dan membantu siswa." },
+//   { siklus: "Siklus 3", nilai: 95, catatan: "Sangat baik dalam menerapkan pembelajaran berdiferensiasi." },
+// ];
 
 // 4. Data Dokumentasi 
 export const DOKUMENTASI_LIST = [
