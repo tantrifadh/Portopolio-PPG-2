@@ -234,14 +234,9 @@ export default function Seminar() {
                         </div>
 
                         {/* Course Title */}
-                        <h2 className="font-serif font-bold text-xl text-neutral-950 leading-snug mb-3 group-hover:text-neutral-700 transition-colors">
+                        <h2 className="font-serif font-bold text-xl text-neutral-950 leading-snug mb-4 group-hover:text-neutral-700 transition-colors">
                           {course.title}
                         </h2>
-
-                        {/* Course Description */}
-                        <p className="text-neutral-600 text-sm leading-relaxed mb-6">
-                          {course.description}
-                        </p>
                       </div>
 
                       <div>
@@ -296,14 +291,11 @@ export default function Seminar() {
           /* VIEW 2: DETAILED 4C VIEW (Black & White Elegan)          */
           /* ========================================================= */
           <div className="animate-in fade-in duration-200">
-            {/* Header: Course Title & Description */}
+            {/* Header: Course Title */}
             <div className="mb-4">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-neutral-950 tracking-tight leading-tight mb-3">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-neutral-950 tracking-tight leading-tight mb-4">
                 {selectedCourse.title}
               </h1>
-              <p className="text-neutral-600 text-sm sm:text-base leading-relaxed max-w-3xl mb-4">
-                {selectedCourse.description}
-              </p>
 
               {/* Back Link */}
               <button
