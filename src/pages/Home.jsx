@@ -49,12 +49,12 @@ export default function Home() {
               <span>Eksplorasi Artefak</span>
               <ArrowRight size={18} />
             </Link>
-            {/* <Link 
+            <Link 
               to="/seminar" 
               className="inline-flex items-center gap-2 bg-neutral-100 text-neutral-900 border border-neutral-300 px-8 py-3.5 rounded-xl hover:bg-neutral-200 transition font-medium shadow-xs"
             >
               <span>Seminar PPG</span>
-            </Link> */}
+            </Link>
           </div>
         </motion.div>
       </section>
