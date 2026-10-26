@@ -381,14 +381,10 @@ export const KESELURUHAN_PPG_DATA = {
   subtitle: "Metamorfosis Paradigma Menjadi Guru Profesional Abad 21",
   description: "Sintesis holistik transformasi kompetensi pedagogik, kepribadian, sosial, dan profesional selama menempuh pendidikan profesi di LPTK UKSW.",
   pdfUrl: "/docs/Refleksi.pdf",
-  pdfTitle: "Dokumen Refleksi Komprehensif PPG",
+  pdfTitle: "Dokumen Refleksi Pengalaman Belajar Selama Mengikuti PPG",
   docCount: 1,
-  fourC: {
-    connection: "Keterkaitan berkesinambungan antara bimbingan teoritis dosen kampus LPTK UKSW, arahan reflektif guru pamong di SMK Negeri 2 Salatiga, dan penempaan nyata di lapangan dalam mengasah 4 standar kompetensi guru (Pedagogik, Kepribadian, Sosial, Profesional).",
-    challenge: "Mengharmonisasikan tuntutan kurikuler akademik, microteaching, uji komprehensif, dan penyusunan modul ajar mendalam dengan ritme dinamika riil permasalahan siswa di sekolah, serta menepis keraguan adaptasi diri sebagai pendidik pemula.",
-    concept: "1) Guru Reflektif Sepanjang Hayat (Lifelong Reflective Practitioner): Menilai proses secara kritis berbasis bukti (evidence-based). 2) Guru Pemimpin Pembelajaran (Instructional Leader) yang berpihak pada peserta didik. 3) Kemitraan Komunitas Belajar Profesional (Learning Community). 4) Budi pekerti dan keteladanan pendidik.",
-    change: "Mengadopsi pola pikir bertumbuh (growth mindset) yang berakar pada ketulusan mendidik. Menjadikan refleksi kritis pasca-pembelajaran sebagai instrumen wajib perbaikan berkelanjutan, mengutamakan pendekatan welas asih dan dialogis, serta berkomitmen terus mengembangkan inovasi pedagogik digital."
-  }
+  hasReflection: false,
+  isDirectDocument: true,
 };
 
 export const VISI_PENDIDIKAN_DATA = {

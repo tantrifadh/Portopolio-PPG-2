@@ -58,12 +58,10 @@ export default function Seminar() {
       {
         ...JURNAL_PTK_DATA,
         semester: "PTK",
-        hasReflection: true,
       },
       {
         ...KESELURUHAN_PPG_DATA,
         semester: "PPG",
-        hasReflection: true,
       },
       {
         ...VISI_PENDIDIKAN_DATA,
@@ -77,8 +75,8 @@ export default function Seminar() {
   const tabCourses = useMemo(() => {
     if (activeTab === "smt-1") return SEMESTER_1_COURSES;
     if (activeTab === "smt-2") return SEMESTER_2_COURSES;
-    if (activeTab === "ptk") return [{ ...JURNAL_PTK_DATA, semester: "PTK", hasReflection: true }];
-    if (activeTab === "ppg") return [{ ...KESELURUHAN_PPG_DATA, semester: "PPG", hasReflection: true }];
+    if (activeTab === "ptk") return [{ ...JURNAL_PTK_DATA, semester: "PTK" }];
+    if (activeTab === "ppg") return [{ ...KESELURUHAN_PPG_DATA, semester: "PPG" }];
     if (activeTab === "visi") return [{ ...VISI_PENDIDIKAN_DATA, semester: "Visi", hasReflection: true }];
     return allCourses;
   }, [activeTab, allCourses]);
@@ -258,7 +256,13 @@ export default function Seminar() {
                         <div className="space-y-1.5 pt-4 border-t border-neutral-100 mb-5">
                           <div className="text-neutral-950 text-xs font-semibold flex items-center gap-2">
                             <CheckCircle2 size={15} className="text-neutral-950 shrink-0" />
-                            <span>{course.isJournal ? "Naskah Jurnal Ilmiah tersedia" : "Refleksi 4C tersedia"}</span>
+                            <span>
+                              {course.isJournal 
+                                ? "Naskah Jurnal Ilmiah tersedia" 
+                                : course.id === "refleksi-keseluruhan-ppg" 
+                                ? "Dokumen Refleksi tersedia" 
+                                : "Refleksi 4C tersedia"}
+                            </span>
                           </div>
                           <div className="text-neutral-600 text-xs font-medium flex items-center gap-2">
                             <FileText size={15} className="text-neutral-400 shrink-0" />
@@ -275,7 +279,13 @@ export default function Seminar() {
                             }}
                             className="flex-1 bg-neutral-950 hover:bg-neutral-800 text-white px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all inline-flex items-center justify-center gap-1.5 shadow-xs cursor-pointer group-hover:scale-[1.01]"
                           >
-                            <span>{course.isJournal ? "Buka Jurnal PTK" : "Lihat Refleksi"}</span>
+                            <span>
+                              {course.isJournal 
+                                ? "Buka Jurnal PTK" 
+                                : course.id === "refleksi-keseluruhan-ppg" 
+                                ? "Buka Dokumen Refleksi" 
+                                : "Lihat Refleksi"}
+                            </span>
                             <ArrowRight size={14} />
                           </button>
 
@@ -337,8 +347,83 @@ export default function Seminar() {
               </button>
             </div>
 
-            {/* KHUSUS JURNAL PTK: Tanpa 4C, Menampilkan Informasi Riset & Dokumen Penuh */}
-            {selectedCourse.isJournal ? (
+            {/* KHUSUS REFLEKSI PENGALAMAN PPG: Tanpa 4C, Pratinjau Dokumen PDF Penuh */}
+            {selectedCourse.id === "refleksi-keseluruhan-ppg" ? (
+              <div className="space-y-6">
+                {/* Info Card */}
+                <div className="bg-white rounded-3xl p-6 sm:p-8 border border-neutral-200 shadow-xs">
+                  <div className="flex flex-wrap items-center justify-between gap-4 pb-4 border-b border-neutral-100">
+                    <div>
+                      <span className="text-[10px] uppercase font-bold tracking-wider text-neutral-500 block mb-1">
+                        Refleksi Akhir PPG Calon Guru
+                      </span>
+                      <h2 className="font-serif font-bold text-lg sm:text-xl text-neutral-950">
+                        {selectedCourse.subtitle || "Sintesis Pengalaman Belajar Selama PPG"}
+                      </h2>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="px-3.5 py-1.5 bg-neutral-100 text-neutral-800 rounded-full text-xs font-bold border border-neutral-200">
+                        LPTK UKSW
+                      </span>
+                      <span className="px-3.5 py-1.5 bg-neutral-950 text-white rounded-full text-xs font-bold">
+                        Dokumen Resmi
+                      </span>
+                    </div>
+                  </div>
+                  <p className="text-neutral-600 text-sm leading-relaxed mt-4">
+                    Dokumen refleksi komprehensif ini merangkum metamorfosis paradigma, penguasaan 4 kompetensi guru (pedagogik, kepribadian, sosial, profesional), serta komitmen menjadi pembelajar reflektif sepanjang hayat.
+                  </p>
+                </div>
+
+                {/* Bagian Dokumen PDF Preview */}
+                <div className="bg-white rounded-3xl p-6 sm:p-8 border border-neutral-200 shadow-xs space-y-5">
+                  <div className="flex flex-wrap items-center justify-between gap-4 pb-4 border-b border-neutral-200">
+                    <div className="flex items-center gap-2.5">
+                      <div className="w-8 h-8 rounded-lg bg-neutral-950 text-white flex items-center justify-center">
+                        <FileText size={18} />
+                      </div>
+                      <div>
+                        <h3 className="font-serif font-bold text-lg text-neutral-950">
+                          Pratinjau Dokumen Refleksi PPG
+                        </h3>
+                        <p className="text-xs text-neutral-500">
+                          {selectedCourse.pdfTitle || "Dokumen Refleksi Pengalaman Belajar Selama Mengikuti PPG"}
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center gap-2">
+                      <a
+                        href={selectedCourse.pdfUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-neutral-100 text-neutral-900 text-xs font-semibold hover:bg-neutral-200 transition-colors border border-neutral-300"
+                      >
+                        <ExternalLink size={14} />
+                        <span>Buka Tab Baru</span>
+                      </a>
+                      <a
+                        href={selectedCourse.pdfUrl}
+                        download
+                        className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-neutral-950 text-white text-xs font-semibold hover:bg-neutral-800 transition-colors"
+                      >
+                        <Download size={14} />
+                        <span>Unduh Dokumen PDF</span>
+                      </a>
+                    </div>
+                  </div>
+
+                  {/* Embedded Iframe Document Viewer */}
+                  <div className="w-full h-[680px] rounded-2xl overflow-hidden border border-neutral-200 bg-neutral-100 shadow-inner">
+                    <iframe
+                      src={`${selectedCourse.pdfUrl}#toolbar=1`}
+                      className="w-full h-full"
+                      title="Pratinjau Dokumen Refleksi PPG"
+                    />
+                  </div>
+                </div>
+              </div>
+            ) : selectedCourse.isJournal ? (
               <div className="space-y-8">
                 {/* Research Metadata Box */}
                 {selectedCourse.metadata && (
