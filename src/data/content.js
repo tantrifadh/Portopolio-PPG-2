@@ -76,13 +76,6 @@ export const DATA_NILAI = [
 // 4. Data Dokumentasi 
 export const DOKUMENTASI_LIST = [
   {
-    id: 1,
-    title: "Diskusi Sebelum Melakukan Proyek IoT",
-    category: "Mengajar",
-    description: "Diskusi dengan siswa terkait apa itu IoT",
-    images: ["/images/diskusi_sebelum_iot.jpg"],
-  },
-  {
     id: 2,
     title: "Pendampingan Praktik IoT",
     category: "Mengajar",
@@ -92,20 +85,6 @@ export const DOKUMENTASI_LIST = [
       "/images/mendampingi_siswa_praktik2.jpg",
       "/images/mendampingi_siswa_praktik3.jpg",
     ],
-  },
-  {
-    id: 3,
-    title: "Mendampingi Siswa Secara Scaffolding",
-    category: "Mengajar",
-    description: "Mendampingi siswa dengan memberikan scaffolding agar siswa dapat menyelesaikan proyek IoT dengan baik",
-    images: ["/images/mendampingi_siswa_praktik1.jpg"],
-  },
-  {
-    id: 4,
-    title: "Presentasi Hasil Proyek IoT",
-    category: "Mengajar",
-    description: "Siswa mempresentasikan hasil proyek IoT di Aula SMKN 2 Salatiga",
-    images: ["/images/presentasi_hasil.jpg"],
   },
   {
     id: 5,
@@ -129,6 +108,30 @@ export const DOKUMENTASI_LIST = [
       "/images/diskusi_dpl.jpeg",
     ],
   },
+  {
+    id:7,
+    title: "Mengajar di Kelas X TKJ A",
+    category: "Mengajar",
+    description: "Mengajar di kelas X TKJ A",
+    images: [
+      "/images/dikelas.jpeg",
+      "/images/survey1.jpg",
+      "/images/survey2.jpg",
+    ]
+  },
+  {
+    id:8,
+    title: "Praktik Crimping Kabel LAN",
+    category: "praktik",
+    description: "Praktik Crimping Kabel LAN oleh murid kelas X TKJ A",
+    images : [
+      "/images/krimp1.jpeg",
+      "/images/krimp2.jpeg",
+      "/images/krimp3.jpeg",
+      "/images/krimp4.jpeg",
+      "/images/krimp5.jpeg",
+    ]
+  }
 ];
 
 // 5. Data Visi & Misi
@@ -169,13 +172,13 @@ export const SEMESTER_1_COURSES = [
     description: "Mempelajari perencanaan pembelajaran yang berorientasi pada pemahaman mendalam, pengalaman belajar yang bermakna, serta penggunaan asesmen sebagai dasar untuk memperbaiki proses pembelajaran.",
     hasReflection: true,
     docCount: 1,
-    pdfUrl: "/docs/LK2.pdf",
+    pdfUrl: "/docs/LK2-PMAD.pdf",
     pdfTitle: "LK 2 - Lembar Refleksi Pembelajaran Mendalam",
     fourC: {
-      connection: "Sebelum mempelajari mata kuliah ini, saya cenderung memandang pembelajaran dari sisi penyampaian materi dan ketercapaian tujuan pembelajaran. Selama PPL di SMK Negeri 2 Salatiga, saya mulai menyadari bahwa murid tidak selalu memahami materi hanya dengan mendengarkan penjelasan. Pada pembelajaran Dasar-Dasar Teknik Jaringan Komputer dan Telekomunikasi, terutama materi K3LH, murid perlu mengamati lingkungan, mengenali risiko, berdiskusi, dan menerapkan pengetahuan melalui kegiatan nyata.",
-      challenge: "Tantangan yang saya rasakan adalah menyusun kegiatan yang tetap bermakna dalam keterbatasan waktu pembelajaran. Dalam satu pertemuan, saya perlu membagi waktu untuk apersepsi, penjelasan materi, diskusi kelompok, praktik, presentasi, dan asesmen. Selain itu, kesiapan murid tidak sama. Ada murid yang cepat memahami instruksi, sedangkan murid lain masih membutuhkan contoh, arahan bertahap, atau pendampingan ketika mengerjakan tugas.",
-      concept: "Saya memahami bahwa pembelajaran mendalam tidak hanya menekankan banyaknya materi yang disampaikan, tetapi bagaimana murid membangun pemahaman, menerapkan pengetahuan, dan merefleksikan pengalaman belajarnya. Asesmen juga tidak seharusnya hanya digunakan untuk memberikan nilai akhir. Hasil asesmen awal, pengamatan selama proses, dan penilaian produk dapat membantu guru mengenali kebutuhan murid serta menentukan tindak lanjut pembelajaran.",
-      change: "Saya ingin merancang pembelajaran dengan tujuan yang lebih jelas, aktivitas yang saling berkaitan, dan asesmen yang direncanakan sejak awal. Saya juga akan menggunakan hasil asesmen untuk menentukan bentuk bantuan yang dibutuhkan murid. Ketika sebagian murid belum memahami materi, saya tidak langsung mengulang seluruh penjelasan, tetapi berusaha menemukan bagian yang belum dipahami dan memberikan contoh atau pendampingan yang lebih sesuai."
+      connection: "Materi pemahaman mendalam membuat saya menyadari bahwa peserta didik tidak cukup hanya bisa mendapatkan jawaban benar, tetapi perlu memahami alasan dan prosesnya. Saat mengajar sistem bilangan di kelas X TJKT, saya tidak hanya meminta peserta didik menghafalkan rumus konversi biner ke desimal, tetapi mengajak mereka melihat kaitannya dengan IP address dan cara kerja perangkat digital. Dengan begitu, peserta didik dapat memahami mengapa materi tersebut penting untuk dipelajari sebelum masuk ke materi jaringan berikutnya.",
+      challenge: "Sebelumnya saya lebih berfokus pada apakah peserta didik dapat menyelesaikan soal dengan benar. Setelah mempelajari pemahaman mendalam dan asesmen dasar, saya mulai memperhatikan proses peserta didik dalam memahami materi. Misalnya ketika ada peserta didik yang mendapatkan hasil konversi yang salah, saya tidak langsung memberikan jawaban, tetapi menanyakan kembali dari mana nilai setiap posisi bilangan diperoleh untuk mengetahui letak kesalahpahamannya.",
+      concept: "Saya memahami bahwa pembelajaran mendalam perlu membuat peserta didik menghubungkan materi dengan konteks yang mereka kenal, memahami konsep secara sadar, dan mampu menerapkannya pada masalah lain. Saya juga memahami pentingnya asesmen dasar sebagai informasi awal untuk mengetahui kemampuan peserta didik sebelum menentukan pembelajaran. Dalam praktiknya, saya dapat mengetahui apakah peserta didik sudah memahami konsep dasar bilangan sebelum masuk ke konversi biner, oktal, dan heksadesimal.",
+      change: "Saya akan melakukan asesmen awal sebelum memulai materi untuk mengetahui kemampuan dasar peserta didik, kemudian menggunakan hasilnya untuk menentukan bentuk pendampingan. Selama pembelajaran, saya juga akan lebih sering melakukan pengecekan pemahaman melalui pertanyaan dan contoh sederhana. Setelah itu, saya akan memberikan masalah yang mengharuskan peserta didik menjelaskan alasan dan langkah penyelesaiannya, bukan hanya menuliskan hasil akhir."
     }
   },
   {
@@ -188,13 +191,13 @@ export const SEMESTER_1_COURSES = [
     description: "Mempelajari pentingnya pola pikir bertumbuh dalam menghadapi tantangan, memberikan umpan balik, dan membangun lingkungan belajar yang mendukung perkembangan kemampuan murid.",
     hasReflection: true,
     docCount: 1,
-    pdfUrl: "/docs/LK2.pdf",
+    pdfUrl: "/docs/LK2-GM.pdf",
     pdfTitle: "LK 2 - Lembar Refleksi Growth Mindset",
     fourC: {
-      connection: "Sebelumnya saya sering memandang kemampuan peserta didik dalam logika komputasi atau perakitan rangkaian sebagai talenta bawaan yang bersifat permanen. Materi ini menghubungkan pengalaman saya saat melihat keputusasaan siswa kelas X ketika menghadapi galat kode (error debugging), menyadarkan saya bahwa peran utama guru adalah menumbuhkan keyakinan bahwa inteligensi dapat ditingkatkan melalui usaha yang terarah.",
-      challenge: "Tantangan nyata adalah meruntuhkan resistensi psikologis dan rasa malu murid saat melakukan kesalahan di depan teman-temannya. Banyak murid yang enggan mencoba hal baru karena takut dinilai tidak mampu atau takut mendapatkan nilai buruk.",
-      concept: "Konsep utama menekankan perbedaan fixed mindset vs growth mindset menurut Carol Dweck: menafsirkan tantangan sebagai peluang belajar, memberikan pujian berorientasi pada proses dan ketekunan (process praise), serta penggunaan kata sakti 'belum' untuk menumbuhkan resiliensi akademik.",
-      change: "Saya mulai mengubah gaya interaksi di kelas dengan mengapresiasi proses penalaran siswa, bukan hanya jawaban akhirnya. Saya juga menyusun refleksi mandiri di mana siswa mencatat kesalahan kode yang mereka temukan dan bagaimana mereka berhasil menyelesaikannya secara mandiri."
+      connection: "Saat PPL, saya mendapat materi jaringan yang belum terlalu saya kuasai. Awalnya saya merasa kurang yakin ketika harus menjelaskannya kepada peserta didik. Dari situ saya belajar bahwa kemampuan saya dalam memahami materi masih dapat berkembang selama saya mau mempelajarinya kembali.",
+      challenge: "Sebelumnya saya cenderung merasa harus sudah menguasai materi sebelum berani mengajarkannya. Melalui Growth Mindset, saya belajar melihat ketidaktahuan sebagai bagian dari proses belajar. Contohnya, ketika belum memahami bagian tertentu dari materi jaringan, saya mempelajarinya kembali sebelum digunakan pada pembelajaran berikutnya.",
+      concept: "Konsep yang paling saya rasakan adalah kemampuan dapat berkembang melalui usaha. Saya mengalami sendiri bahwa materi jaringan yang awalnya belum terlalu saya pahami menjadi lebih mudah setelah saya pelajari kembali dan mencoba menggunakannya saat mengajar.",
+      change: "Saya akan lebih terbiasa mengatakan pada diri sendiri bahwa “belum bisa” bukan berarti “tidak bisa”. Ketika menemukan materi yang belum saya kuasai, saya akan mempelajarinya kembali dan memperbaiki persiapan sebelum mengajar, daripada menghindarinya karena merasa belum mampu."
     }
   },
   {
@@ -207,13 +210,13 @@ export const SEMESTER_1_COURSES = [
     description: "Mempelajari cara berpikir sistematis untuk menyelesaikan masalah melalui dekomposisi, pengenalan pola, abstraksi, dan penyusunan algoritma.",
     hasReflection: true,
     docCount: 1,
-    pdfUrl: "/docs/LK2.pdf",
+    pdfUrl: "/docs/LK2-CT.pdf",
     pdfTitle: "LK 2 - Lembar Refleksi Computational Thinking",
     fourC: {
-      connection: "Mengaitkan konsep berpikir komputasional dengan penyelesaian persoalan nyata dalam teknik jaringan komputer dan pemrograman IoT. Computational thinking bukan sekadar memprogram di depan komputer, melainkan cara berpikir analitis yang mendasari literasi digital di era kecerdasan buatan.",
-      challenge: "Kesulitan terbesar yang dialami peserta didik adalah pada tahapan abstraksi dan dekomposisi. Mereka sering merasa kewalahan ketika disajikan studi kasus yang kompleks dan kesulitan memisahkan mana informasi penting dan mana detail yang tidak relevan.",
-      concept: "Empat pilar utama Computational Thinking: 1) Dekomposisi (memecah problem besar menjadi sub-problem terkelola); 2) Pengenalan Pola (mengidentifikasi kemiripan dengan problem terdahulu); 3) Abstraksi (memusatkan fokus pada prinsip esensial); 4) Perancangan Algoritma (merumuskan langkah-langkah terstruktur dan logis).",
-      change: "Mengimplementasikan pembelajaran CT secara kontekstual melalui tantangan unplugged dan studi kasus troubleshoot jaringan. Mengajak peserta didik menggambar alur berpikir (flowchart) dan peta dekomposisi sebelum mulai mengonfigurasi perangkat lunak atau perakitan sensor."
+      connection: "Saat mempelajari Berpikir Komputasional, saya mulai melihat bahwa materi jaringan tidak selalu harus dijelaskan dengan memberikan langkah penyelesaian secara langsung. Saat peserta didik mengalami kesulitan dalam memahami suatu permasalahan jaringan, saya dapat mengarahkan mereka untuk memecah masalah terlebih dahulu menjadi bagian yang lebih sederhana, kemudian mencari bagian mana yang menyebabkan masalah.",
+      challenge: "Sebelumnya ketika peserta didik mengalami kesulitan, saya cenderung langsung menunjukkan cara menyelesaikannya. Setelah mempelajari Berpikir Komputasional, saya mencoba mengarahkan peserta didik untuk menemukan masalahnya sendiri. Misalnya ketika membahas jaringan, peserta didik tidak langsung diberi jawaban bahwa koneksi bermasalah, tetapi diarahkan mengecek satu per satu perangkat, kabel, dan pengaturan yang berkaitan dengan koneksi tersebut.",
+      concept: "Konsep yang paling saya pahami adalah decomposition, yaitu memecah masalah yang besar menjadi bagian-bagian kecil agar lebih mudah diselesaikan. Dalam pembelajaran jaringan, cara berpikir ini dapat digunakan ketika peserta didik melakukan troubleshooting. Mereka tidak langsung mencari satu jawaban, tetapi mengidentifikasi bagian masalah secara bertahap sampai menemukan penyebabnya.",
+      change: "Saya ingin mengurangi kebiasaan langsung memberikan jawaban ketika peserta didik mengalami kesulitan. Saya akan memberikan pertanyaan penuntun seperti “Bagian mana yang bermasalah?”, “Sudah dicek bagian apa saja?”, dan “Apa yang terjadi jika bagian tersebut tidak bekerja?”, sehingga peserta didik terbiasa menganalisis masalah sebelum menentukan solusi."
     }
   },
   {
@@ -226,13 +229,13 @@ export const SEMESTER_1_COURSES = [
     description: "Menelaah pemikiran Ki Hajar Dewantara mengenai sistem among, kodrat alam & kodrat zaman, dan kemerdekaan belajar peserta didik.",
     hasReflection: true,
     docCount: 1,
-    pdfUrl: "/docs/LK1.pdf",
+    pdfUrl: "/docs/LK2-FPPN.pdf",
     pdfTitle: "LK 1 - Lembar Refleksi Filosofi Pendidikan Indonesia",
     fourC: {
-      connection: "Mengaitkan esensi filosofi Ki Hajar Dewantara tentang 'menuntun segala kodrat' dengan peran pendidik vokasi Informatika. Pendidikan bukan mencetak siswa secara seragam, melainkan menyuburkan benih potensi alami dan bakat digital yang telah mereka miliki agar selaras dengan kodrat zaman abad ke-21.",
-      challenge: "Mereduksi paradigma lama yang menganggap sekolah kejuruan hanya berorientasi mekanistik/vokasional semata. Tantangannya adalah mengintegrasikan nilai-nilai budi pekerti, olah rasa, dan kemerdekaan berpikir di tengah padatnya tuntutan kurikulum teknis.",
-      concept: "1) Sistem Among ('Ing Ngarso Sung Tulodo, Ing Madyo Mangun Karso, Tut Wuri Handayani'). 2) Kodrat Alam dan Kodrat Zaman. 3) Budi Pekerti sebagai keharmonisan cipta, rasa, karsa, dan raga. 4) Tri Sentra Pendidikan (keluarga, sekolah, dan masyarakat).",
-      change: "Beralih dari instruktur teknis yang dominan menjadi fasilitator humanis. Menghadirkan iklim kelas yang aman, mendengarkan suara murid (student voice and choice), serta menanamkan etika digital berlandaskan Profil Pelajar Pancasila."
+      connection: "Selama PPL, saya menyadari bahwa menjadi guru bukan hanya mengajarkan materi, tetapi juga menuntun peserta didik menjadi pribadi yang lebih baik, sesuai filosofi Ki Hajar Dewantara. Saya menemui beberapa peserta didik yang masih kurang dalam bersikap, seperti kurang menghargai guru saat pembelajaran atau kurang disiplin. Pengalaman tersebut membuat saya memahami bahwa guru perlu memberikan teladan, mengingatkan dengan cara yang baik, dan membimbing peserta didik secara konsisten agar karakter  mereka  berkembang,  bukan hanya kemampuan akademiknya.",
+      challenge: "Sebelum mengikuti mata kuliah ini, saya mengira memberikan penjelasan yang sama kepada seluruh peserta didik sudah cukup. Namun, saat PPL saya menyadari bahwa memahami karakteristik peserta didik jauh lebih penting	daripada	sekadar menyampaikan materi. Pada peserta didik inklusi, saya harus berbicara dengan lebih pelan, menggunakan kalimat yang sederhana, mengulang penjelasan apabila diperlukan, serta memastikan kembali bahwa ia benar-benar memahami instruksi yang diberikan.",
+      concept: "Konsep yang paling saya pahami adalah menuntun peserta didik sesuai pemikiran Ki Hajar Dewantara. Guru hadir untuk membimbing perkembangan akademik maupun karakter peserta didik melalui keteladanan dan pendampingan.",
+      change: "Saya ingin memastikan setiap modul ajar yang saya susun memiliki landasan filosofi  yang  jelas.  Saya  akan  lebih banyak menghadirkan masalah nyata yang dekat dengan dunia peserta didik, memberi ruang eksplorasi, menghargai perbedaan kemampuan melalui pembelajaran berdiferensiasi, serta lebih berperan sebagai pembimbing dibanding pemberi informasi."
     }
   },
   {
@@ -245,32 +248,13 @@ export const SEMESTER_1_COURSES = [
     description: "Memahami tahapan perkembangan kognitif, sosio-emosional, dan profil belajar peserta didik untuk pembelajaran berdiferensiasi.",
     hasReflection: true,
     docCount: 1,
-    pdfUrl: "/docs/LK2.pdf",
+    pdfUrl: "/docs/LK2-PPDP.pdf",
     pdfTitle: "LK 2 - Lembar Refleksi Pemahaman Peserta Didik",
     fourC: {
-      connection: "Menghubungkan teori perkembangan kognitif (Piaget) dan sosio-kultural (Vygotsky) dengan karakteristik nyata Generasi Z di SMK Negeri 2 Salatiga. Menyadari urgensi pemetaan latar belakang dan modalitas belajar sebelum menetapkan intervensi pedagogik.",
-      challenge: "Menghadapi rentang kemampuan awal yang sangat lebar di kelas X TKJ: sebagian siswa sudah mahir coding secara otodidak, sedangkan sebagian lainnya masih kesulitan dengan dasar pengoperasian komputer.",
-      concept: "1) Developmentally Appropriate Practice (DAP) dan Culturally Responsive Teaching (CRT). 2) Asesmen Diagnostik (Kognitif & Non-Kognitif). 3) Zone of Proximal Development (ZPD) & Scaffolding. 4) Pembelajaran Berdiferensiasi (Konten, Proses, Produk).",
-      change: "Menghentikan pendekatan seragam. Saya mulai rutin menjalankan asesmen diagnostik di awal bab, merancang lembar kerja bertingkat (scaffolded worksheets), dan mengoptimalkan tutor sebaya (peer tutoring)."
-    }
-  },
-  {
-    id: "prinsip-pengajaran-asesmen-1",
-    number: "06",
-    semester: 1,
-    title: "Prinsip Pengajaran dan Asesmen yang Efektif I",
-    code: "PPA I",
-    sks: "3 SKS",
-    description: "Merancang perangkat pembelajaran berbasis Understanding by Design (UbD) dan asesmen autentik berkelanjutan.",
-    hasReflection: true,
-    docCount: 1,
-    pdfUrl: "/docs/LK2.pdf",
-    pdfTitle: "LK 2 - Lembar Refleksi Prinsip Pengajaran & Asesmen I",
-    fourC: {
-      connection: "Mengintegrasikan kerangka desain mundur (backward design) dalam penyusunan modul ajar Informatika, memastikan setiap asesmen terhubung langsung dengan pemahaman bermakna dan keterampilan esensial yang diharapkan.",
-      challenge: "Mengubah kebiasaan lama yang mendahulukan perancangan aktivitas menarik dan media presentasi sebelum menentukan bukti asesmen yang valid dan terukur.",
-      concept: "1) Kerangka Backward Design / UbD: Identifikasi Hasil -> Tentukan Bukti Ketercapaian -> Rancang Aktivitas Belajar. 2) Asesmen for, as, and of learning. 3) Kriteria Ketercapaian Tujuan Pembelajaran (KKTP) berbasis rubrik analitik.",
-      change: "Menerapkan alur UbD secara konsisten dalam setiap modul ajar. Menyusun rubrik penilaian kinerja praktikum yang transparan dan menyosialisasikannya kepada murid di awal pertemuan."
+      connection: "Materi ini berkaitan langsung dengan pengalaman saya saat PPL ketika mendampingi peserta didik yang menggunakan alat bantu dengar. Saya melihat bahwa peserta didik tersebut sebenarnya dapat mengikuti penjelasan dan sangat aktif dalam pembelajaran, tetapi terkadang perlu ditanya kembali atau diberikan penjelasan ulang untuk memastikan bahwa ia benar-benar memahami materi. Hal ini membuat saya menyadari pentingnya guru memperhatikan proses pemahaman setiap peserta didik, bukan hanya melihat apakah mereka mengikuti pembelajaran atau tidak.",
+      challenge: "Sebelumnya saya cenderung menganggap ketika peserta didik sudah memperhatikan dan dapat mengikuti kegiatan, berarti materi sudah dipahami. Saat PPL, saya belajar bahwa hal tersebut belum tentu. Saya perlu melakukan checking for understanding, misalnya dengan bertanya kembali atau meminta peserta didik menjelaskan dengan bahasanya sendiri. Pengalaman ini membuat saya lebih memperhatikan proses pemahaman, terutama pada peserta didik yang membutuhkan dukungan tertentu.",
+      concept: "Saya mempelajari bahwa setiap peserta didik memiliki karakteristik perkembangan, kemampuan belajar, dan kebutuhan yang berbeda sehingga guru perlu menerapkan pembelajaran yang berpusat pada peserta didik. Saya juga memahami pentingnya menciptakan pembelajaran yang inklusif, memberikan kesempatan belajar yang sama kepada semua peserta didik, serta melakukan pendampingan (scaffolding) sesuai kebutuhan agar setiap peserta didik dapat berkembang sesuai potensinya.",
+      change: "Setelah mengikuti mata kuliah ini dan menjalani PPL, saya ingin lebih peka dalam mengenali kebutuhan belajar peserta didik sejak awal melalui asesmen diagnostik sederhana, menyampaikan materi dengan bahasa yang mudah dipahami dan tempo yang sesuai, serta rutin mengecek pemahaman dengan meminta peserta didik menjelaskan kembali atau mencoba contoh sederhana, sambil tetap memberikan perhatian, pendampingan, dan kesempatan berpartisipasi secara aktif tanpa membuat peserta didik merasa dibedakan dari teman-temannya."
     }
   },
   {
@@ -283,54 +267,54 @@ export const SEMESTER_1_COURSES = [
     description: "Observasi lingkungan belajar sekolah, asistensi mengajar, dan praktik pembelajaran terbimbing di SMK Negeri 2 Salatiga.",
     hasReflection: true,
     docCount: 1,
-    pdfUrl: "/docs/LK2.pdf",
+    pdfUrl: "/docs/LK2-PPL.pdf",
     pdfTitle: "LK 2 - Laporan Observasi & Refleksi PPL I",
     fourC: {
-      connection: "Menguji seluruh fondasi teori pedagogik dan filosofi ke dalam dinamika nyata kelas kejuruan di SMK Negeri 2 Salatiga, serta berinteraksi intensif dengan guru pamong dan rekan sejawat.",
-      challenge: "Mengelola dinamika laboratorium: distraksi perangkat gawai saat praktikum, fluktuasi fokus murid pada jam siang, serta kesiapan fasilitas kelistrikan dan jaringan internet.",
-      concept: "1) Siklus Lesson Study (Plan - Do - See) untuk peningkatan mutu berkelanjutan. 2) Manajemen kelas kolaboratif dan iklim kelas aman. 3) Teaching at the Right Level (TaRL).",
-      change: "Membangun kesepakatan belajar bersama murid di awal pertemuan, menyusun manajemen waktu praktikum yang disiplin namun fleksibel, serta rutin meminta umpan balik reflektif dari guru pamong."
+      connection: "PPL Terbimbing menjadi pengalaman pertama saya benar-benar berdiri di depan kelas sebagai guru, khususnya di jenjang SMK. Saat mengajar, saya merasakan bahwa kondisi mengajar berbeda dengan ketika hanya membuat perangkat pembelajaran. Saya harus berhadapan langsung dengan peserta didik, menjelaskan materi jaringan, menjawab pertanyaan, dan menjaga pembelajaran tetap berjalan. Pengalaman ini membuat saya lebih memahami tanggung jawab guru secara nyata.",
+      challenge: "Sebelum PPL, saya lebih banyak mempersiapkan pembelajaran berdasarkan teori dan perangkat yang sudah dibuat. Namun saat praktik, saya mendapatkan materi jaringan komputer, sementara saya belum terlalu memahami beberapa bagian materi tersebut. Tantangannya muncul ketika peserta didik bertanya lebih jauh dari materi yang sudah saya siapkan. Saya akhirnya harus mempelajari kembali materi sebelum mengajar agar dapat menjelaskan dengan lebih tepat.",
+      concept: "Saya belajar bahwa persiapan mengajar tidak cukup hanya dengan membuat modul ajar atau PPT. Guru harus memahami materi yang akan disampaikan karena pertanyaan peserta didik bisa berkembang di luar contoh yang sudah disiapkan. Saya juga belajar dari pengalaman pertama mengajar bahwa penguasaan materi dan kesiapan menghadapi respons peserta didik sangat memengaruhi kepercayaan diri saya ketika berada di depan kelas.",
+      change: "Setelah pengalaman tersebut, saya akan mempersiapkan materi jaringan lebih mendalam sebelum mengajar, bukan hanya memahami materi yang akan ditampilkan di PPT. Saya juga akan mencoba memprediksi pertanyaan yang mungkin muncul dari peserta didik dan menyiapkan contoh atau praktik sederhana untuk menjelaskannya. Dengan begitu, saya tidak hanya siap menyampaikan materi, tetapi juga lebih siap ketika peserta didik bertanya atau membutuhkan penjelasan dari sudut pandang yang berbeda."
     }
   }
 ];
 
 export const SEMESTER_2_COURSES = [
   {
-    id: "prinsip-pengajaran-asesmen-2",
+    id: "pembelajaran-mendalam-asesmen-lanjut",
     number: "01",
     semester: 2,
-    title: "Prinsip Pengajaran dan Asesmen yang Efektif II",
-    code: "PPA II",
+    title: "Pembelajaran Mendalam dan Asesmen Lanjut",
+    code: "PMAL",
     sks: "3 SKS",
     description: "Penerapan asesmen berkelanjutan, asesmen formatif adaptif, dan evaluasi hasil belajar berbasis data di kelas kejuruan.",
     hasReflection: true,
     docCount: 1,
-    pdfUrl: "/docs/LK3.pdf",
-    pdfTitle: "LK 3 - Lembar Refleksi PPA II",
+    pdfUrl: "/docs/LK3-PMAL.pdf",
+    pdfTitle: "LK 3 - Lembar Refleksi PMAL",
     fourC: {
-      connection: "Melanjutkan penguasaan UbD dengan memfokuskan pada pemanfaatan data asesmen formatif untuk menyesuaikan alur pembelajaran secara adaptif (real-time instructional adaptation).",
-      challenge: "Tantangan menganalisis data hasil asesmen formatif harian secara cepat agar dapat segera dijadikan dasar diferensiasi materi pada pertemuan berikutnya.",
-      concept: "1) Data-Driven Instruction: Menggunakan data formatif untuk intervensi terfokus. 2) Asesmen portofolio digital berbasis hasil karya nyata. 3) Umpan balik deskriptif tepat waktu (timely descriptive feedback).",
-      change: "Memanfaatkan kuis formatif digital interaktif dan lembar refleksi ringkas di akhir jam pelajaran untuk mendeteksi miskonsepsi siswa sebelum berpindah ke materi baru."
+      connection: "Materi Pembelajaran Mendalam dan Asesmen Lanjut berkaitan erat dengan peran saya sebagai calon guru karena membantu saya merancang pembelajaran yang berpusat pada murid, bermakna, dan sesuai dengan kebutuhan belajar mereka. Melalui pendekatan pembelajaran mendalam yang meliputi prinsip mindful, meaningful, dan joyful learning, saya belajar bahwa pembelajaran tidak hanya berorientasi pada penyelesaian materi, tetapi juga pada pemahaman konsep, keterlibatan aktif, dan kemampuan murid menerapkan pengetahuan dalam kehidupan nyata. Dalam pembelajaran Informatika, saya dapat menerapkannya melalui kegiatan praktik, pemecahan masalah jaringan, dan proyek sederhana yang menghubungkan teori dengan situasi nyata.",
+      challenge: "Sebelumnya, saya cenderung berfokus pada penyampaian materi, pelaksanaan kegiatan pembelajaran, dan pencapaian hasil belajar. Setelah mempelajari mata kuliah ini, saya memahami pentingnya merancang pembelajaran mulai dari tujuan yang ingin dicapai, menentukan bukti ketercapaian tujuan, kemudian menyusun aktivitas pembelajaran yang sesuai melalui prinsip Understanding by Design (UbD). Saya juga memahami bahwa asesmen tidak hanya dilakukan pada akhir pembelajaran, tetapi dapat digunakan selama proses belajar untuk membantu murid mengenali perkembangan dan memperbaiki pemahamannya. Tantangan bagi saya adalah menyelaraskan tujuan, kegiatan, dan asesmen agar benar-benar mendukung pembelajaran mendalam.",
+      concept: "Konsep utama yang saya pelajari meliputi pendekatan pembelajaran mendalam dengan prinsip mindful learning, yaitu pembelajaran yang mendorong kesadaran dan keterlibatan murid; meaningful learning, yaitu pembelajaran yang menghubungkan materi dengan pengetahuan dan pengalaman nyata; serta joyful learning, yaitu pembelajaran yang menciptakan suasana positif dan menyenangkan. Selain itu, saya mempelajari prinsip UbD yang menekankan keselarasan antara tujuan pembelajaran, bukti asesmen, dan kegiatan pembelajaran. Saya juga memahami tiga pendekatan asesmen, yaitu assessment as learning untuk mengembangkan refleksi dan penilaian diri murid, assessment for learning untuk memberikan umpan balik selama proses pembelajaran, serta assessment of learning untuk mengetahui ketercapaian hasil belajar.",
+      change: "Setelah mempelajari materi ini, saya ingin merancang pembelajaran yang lebih terarah, berpusat pada murid, dan mendorong pemahaman mendalam. Saya akan mulai dengan menetapkan tujuan pembelajaran yang jelas, menentukan kriteria keberhasilan dan bukti asesmen, kemudian memilih aktivitas yang sesuai dengan kebutuhan murid. Dalam pembelajaran Informatika, misalnya pada materi IP Address dan media transmisi jaringan, saya ingin mengombinasikan penjelasan konsep dengan analisis kasus dan praktik langsung agar murid dapat memahami serta menerapkan pengetahuan. Saya juga akan menggunakan asesmen formatif, rubrik kinerja, umpan balik, dan refleksi diri agar proses penilaian tidak hanya menghasilkan nilai, tetapi juga membantu murid memperbaiki proses belajarnya."
     }
   },
   {
     id: "pembelajaran-berdiferensiasi-pse",
     number: "02",
     semester: 2,
-    title: "Pembelajaran Berdiferensiasi & Pembelajaran Sosial Emosional",
+    title: "Pembelajaran Sosial Emosional",
     code: "PB-PSE",
     sks: "3 SKS",
     description: "Merancang pengalaman belajar yang mengakomodasi gaya belajar, minat, serta kesiapan siswa dengan penguatan 5 kompetensi sosial emosional.",
     hasReflection: true,
     docCount: 1,
-    pdfUrl: "/docs/LK3.pdf",
-    pdfTitle: "LK 3 - Lembar Refleksi Diferensiasi & PSE",
+    pdfUrl: "/docs/LK3-PSE.pdf",
+    pdfTitle: "LK 3 - Lembar Refleksi PSE",
     fourC: {
-      connection: "Menghubungkan penguasaan teknis IT dengan kematangan sosio-emosional murid, menempatkan kesejahteraan emosional (well-being) sebagai prasyarat utama keberhasilan belajar.",
-      challenge: "Mengintegrasikan 5 kompetensi sosial emosional ke dalam materi teknis yang padat tanpa mengurangi kedalaman capaian kurikuler kejuruan.",
-      concept: "1) 5 Kompetensi Sosial Emosional (KSE): Kesadaran diri, manajemen diri, kesadaran sosial, keterampilan berelasi, pengambilan keputusan bertanggung jawab. 2) Diferensiasi Konten, Proses, Produk.",
-      change: "Mengawali kelas dengan teknik STOP / mindfulness, memberikan kebebasan bagi kelompok untuk memilih variasi tema proyek IoT sesuai minat, serta merancang rubrik penilaian kolaborasi."
+      connection: "Materi Pembelajaran Sosial Emosional berkaitan erat dengan peran saya sebagai calon guru karena guru tidak hanya bertugas menyampaikan materi akademik, tetapi juga membantu murid mengembangkan kemampuan mengelola emosi, membangun hubungan sosial yang positif, dan mengambil keputusan secara bertanggung jawab. Dalam praktik mengajar Informatika, saya menyadari bahwa setiap murid memiliki karakter, tingkat kepercayaan diri, dan kebutuhan belajar yang berbeda. Oleh karena itu, saya perlu menciptakan suasana kelas yang aman, nyaman, dan mendukung keterlibatan semua murid.",
+      challenge: "Sebelumnya, saya lebih berfokus pada penyampaian materi, ketercapaian tujuan pembelajaran, dan hasil belajar murid. Setelah mempelajari Pembelajaran Sosial Emosional, saya memahami bahwa kondisi emosional, empati, dan hubungan sosial juga perlu diperhatikan selama pembelajaran. Tantangan bagi saya adalah menerapkan prinsip tersebut secara konsisten, terutama ketika menghadapi murid yang kurang percaya diri, pasif, atau mengalami kesulitan dalam bekerja sama.",
+      concept: "Konsep penting yang saya pelajari adalah lima kompetensi sosial emosional, yaitu kesadaran diri (self-awareness), manajemen diri (self-management), kesadaran sosial (social awareness), keterampilan berelasi (relationship skills), dan pengambilan keputusan yang bertanggung jawab (responsible decision-making). Kompetensi tersebut dapat diterapkan melalui kegiatan refleksi, diskusi, kerja kelompok, komunikasi positif, dan pembiasaan sikap saling menghargai. Saya juga memahami bahwa guru perlu menjadi teladan dalam mengelola emosi dan membangun hubungan yang baik dengan murid.",
+      change: "Saya ingin lebih memperhatikan kondisi sosial emosional murid dalam merancang dan melaksanakan pembelajaran. Saya akan membiasakan diri mengelola emosi, memberikan umpan balik yang membangun, menghargai perbedaan kemampuan, dan memberikan kesempatan kepada setiap murid untuk berpartisipasi. Dalam praktik Informatika, seperti konfigurasi jaringan dan crimping kabel LAN, saya ingin membangun kerja sama, tanggung jawab, dan sikap saling membantu sehingga pembelajaran tidak hanya mengembangkan keterampilan teknis, tetapi juga karakter murid."
     }
   },
   {
@@ -343,32 +327,32 @@ export const SEMESTER_2_COURSES = [
     description: "Pelaksanaan pembelajaran mandiri, integrasi teknologi mutakhir melalui Project IoT ESP32, dan bimbingan intensif peserta didik.",
     hasReflection: true,
     docCount: 1,
-    pdfUrl: "/docs/LK3.pdf",
+    pdfUrl: "/docs/LK3-PPL.pdf",
     pdfTitle: "LK 3 - Laporan Refleksi Pelaksanaan PPL II Mandiri",
     fourC: {
-      connection: "Menyatukan kerangka TPACK tingkat lanjut dengan model Project-Based Learning (PjBL) pada mata pelajaran Dasar Program Keahlian TKJ di SMK Negeri 2 Salatiga.",
-      challenge: "Mengelola kompleksitas sesi perakitan sirkuit sensor mikrokontroler, mengatasi disparitas kecepatan kerja antar kelompok, serta menjaga daya juang siswa saat program gagal dieksekusi.",
-      concept: "1) 6 Sintaks PjBL berorientasi produk autentik riil. 2) TPACK (Technological Pedagogical Content Knowledge). 3) Scaffolding pemecahan masalah teknis mandiri.",
-      change: "Berperan sebagai konsultan riset dan fasilitator belajar. Menyusun panduan mandiri troubleshooting sirkuit dan menciptakan atmosfer kelas yang merayakan kegagalan sebagai gerbang penemuan baru."
+      connection: "Mata kuliah Praktik Pengalaman Lapangan (PPL) Mandiri memiliki keterkaitan erat dengan peran saya sebagai calon guru karena memberikan kesempatan untuk menerapkan pengetahuan dan keterampilan pedagogik yang telah dipelajari selama perkuliahan ke dalam situasi pembelajaran nyata. Melalui kegiatan PPL di SMK Negeri 2 Salatiga, saya belajar merancang perangkat pembelajaran, melaksanakan kegiatan belajar mengajar, mengelola kelas, menggunakan media pembelajaran, serta melakukan asesmen terhadap hasil belajar murid. Pengalaman ini membantu saya memahami bahwa menjadi guru tidak hanya membutuhkan penguasaan materi Informatika, tetapi juga kemampuan berkomunikasi, beradaptasi, dan memahami karakteristik serta kebutuhan belajar murid.",
+      challenge: "Sebelum melaksanakan PPL Mandiri, pemahaman saya mengenai pembelajaran lebih banyak diperoleh melalui teori perkuliahan dan penyusunan perangkat pembelajaran. Ketika melaksanakan praktik mengajar, saya menyadari bahwa situasi kelas tidak selalu berjalan sesuai dengan perencanaan. Perbedaan kemampuan, keaktifan, respons, dan pemahaman murid menuntut saya untuk menyesuaikan strategi pembelajaran secara langsung. Saya juga belajar bahwa pengelolaan waktu, pemberian instruksi, penggunaan media, dan penanganan kesulitan belajar membutuhkan keterampilan praktis serta kemampuan mengambil keputusan. Pengalaman tersebut menjadi tantangan sekaligus kesempatan bagi saya untuk mengembangkan kompetensi sebagai calon guru profesional.",
+      concept: "Konsep utama yang saya pelajari melalui PPL Mandiri adalah perencanaan pembelajaran yang sistematis, pembelajaran yang berpusat pada murid, pengelolaan kelas, asesmen pembelajaran, refleksi, dan tindak lanjut. Saya memahami bahwa guru perlu menyelaraskan tujuan pembelajaran, materi, metode, media, dan asesmen agar kegiatan belajar berjalan efektif. Dalam pembelajaran Informatika, saya memperoleh pengalaman mengajarkan materi konversi bilangan, gerbang logika, dasar IP Address, topologi jaringan, media dan perangkat jaringan, serta OSI Layer. Saya juga belajar pentingnya memberikan contoh konkret, demonstrasi, dan kegiatan praktik agar murid lebih mudah memahami konsep yang bersifat abstrak maupun teknis. Selain itu, masukan dari guru pamong dan hasil refleksi menjadi bagian penting dalam memperbaiki kualitas pembelajaran.",
+      change: "Setelah mengikuti PPL Mandiri, saya ingin menjadi guru yang lebih reflektif, adaptif, dan responsif terhadap kebutuhan murid. Saya akan meningkatkan kemampuan dalam menyusun perangkat pembelajaran, mengelola waktu, memilih media yang sesuai, serta mengembangkan asesmen yang dapat mengukur proses dan hasil belajar. Saya juga ingin memberikan instruksi yang lebih jelas, melibatkan murid secara aktif, dan menyediakan pendampingan bagi murid yang mengalami kesulitan atau kurang percaya diri. Selain itu, saya akan memanfaatkan umpan balik dari guru pamong dan hasil evaluasi pembelajaran untuk memperbaiki strategi mengajar pada pertemuan berikutnya sehingga pembelajaran menjadi lebih efektif, bermakna, dan menyenangkan."
     }
   },
   {
-    id: "seminar-ppg",
+    id: "prokem",
     number: "04",
     semester: 2,
-    title: "Seminar Pendidikan Profesi Guru",
-    code: "SEMINAR",
+    title: "Projek Kepemimpinan",
+    code: "prokem",
     sks: "2 SKS",
     description: "Refleksi komprehensif, penyusunan portofolio digital, dan diseminasi hasil praktik baik pembelajaran inovatif di hadapan penguji dan rekan sejawat.",
     hasReflection: true,
     docCount: 1,
-    pdfUrl: "/docs/LK3.pdf",
-    pdfTitle: "LK 3 - Refleksi Portofolio Seminar PPG",
+    pdfUrl: "/docs/LK3-PK.pdf",
+    pdfTitle: "LK 3 - Prokem",
     fourC: {
-      connection: "Menghubungkan seluruh artefak pembelajaran, catatan reflektif, dan dokumentasi PPL menjadi narasi transformasi keprofesian guru yang terstruktur dan bermakna.",
-      challenge: "Mengkristalisasi ratusan jam pengalaman praktik mengajar ke dalam karya refleksi yang padat, kritis, dan berorientasi pada perbaikan nyata mutu pendidikan di masa depan.",
-      concept: "1) Pendidik Reflektif Sepanjang Hayat (Lifelong Reflective Practitioner). 2) Diseminasi Praktik Baik (Best Practices Sharing). 3) Portofolio Berbasis Bukti (Evidence-Based Portfolio).",
-      change: "Membangun komitmen berkelanjutan untuk terus meneliti, mengevaluasi praktik mengajar sendiri, serta aktif berjejaring dalam komunitas belajar guru profesional."
+      connection: "Mata kuliah Projek Kepemimpinan memiliki keterkaitan erat dengan peran saya sebagai calon guru karena membekali saya dengan kemampuan memimpin, bekerja sama, berkomunikasi, dan menyelesaikan masalah melalui kegiatan projek yang nyata. Melalui projek kelompok Quad Lumina bertema “Dari Ide Menjadi Aksi: Kepemimpinan Mahasiswa melalui Pendampingan Projek IoT”, saya belajar mendampingi siswa dalam mengembangkan kreativitas dan menghasilkan solusi teknologi sederhana. Pengalaman ini membantu saya memahami bahwa guru tidak hanya berperan sebagai penyampai materi, tetapi juga sebagai fasilitator, pembimbing, dan pemimpin yang mampu mengarahkan siswa untuk bekerja sama, berinovasi, serta bertanggung jawab terhadap proses dan hasil projek.",
+      challenge: "Sebelumnya, saya lebih banyak berfokus pada perencanaan dan pelaksanaan pembelajaran di kelas. Melalui mata kuliah Projek Kepemimpinan, saya memperoleh pengalaman yang lebih luas, yaitu merancang, melaksanakan, memantau, dan mengevaluasi projek secara kolaboratif. Saya belajar bahwa pelaksanaan projek tidak selalu berjalan sesuai rencana karena dapat muncul kendala teknis, perbedaan pendapat, pembagian tugas yang belum optimal, maupun keterbatasan waktu. Dalam pendampingan projek IoT, misalnya, diperlukan proses identifikasi masalah, pengujian alat, perbaikan rangkaian, dan evaluasi produk. Pengalaman tersebut mengajarkan saya untuk tidak hanya berorientasi pada hasil akhir, tetapi juga memperhatikan proses kolaborasi, pengambilan keputusan, dan kemampuan kelompok dalam menghadapi tantangan.",
+      concept: "Konsep utama yang saya pelajari adalah kepemimpinan kolaboratif, komunikasi efektif, manajemen projek, pemecahan masalah, pengambilan keputusan, kreativitas, inovasi, serta evaluasi keberhasilan projek. Saya memahami bahwa seorang pemimpin perlu mampu mengidentifikasi kebutuhan, menetapkan tujuan, membagi tugas sesuai kemampuan anggota, mengelola sumber daya, dan memastikan setiap anggota berkontribusi. Selain itu, konsep service learning mengajarkan bahwa projek sebaiknya tidak hanya menghasilkan produk, tetapi juga memberikan manfaat bagi pihak yang dilayani. Dalam projek pendampingan IoT, siswa didorong untuk merancang solusi teknologi sederhana berdasarkan kebutuhan, melakukan pengujian, memperbaiki kekurangan, dan mempresentasikan hasilnya. Konsep tersebut relevan dengan peran guru dalam membangun pembelajaran berbasis projek yang kolaboratif, kontekstual, dan berdampak nyata.",
+      change: "Setelah mengikuti mata kuliah Projek Kepemimpinan, saya ingin menjadi calon guru yang lebih proaktif, bertanggung jawab, terbuka terhadap masukan, dan mampu bekerja sama dalam mencapai tujuan bersama. Saya akan menerapkan prinsip kepemimpinan kolaboratif dalam pembelajaran dengan memberikan kesempatan kepada siswa untuk menyampaikan ide, menentukan pembagian tugas, menyelesaikan masalah, dan mengevaluasi hasil kerja secara mandiri maupun berkelompok. Saya juga ingin lebih terampil merancang projek yang sesuai dengan kebutuhan nyata di lingkungan sekolah atau masyarakat. Selain itu, saya akan membiasakan diri melakukan evaluasi secara berkala agar kendala dapat diidentifikasi lebih awal dan setiap kegiatan memiliki tindak lanjut yang jelas. Dengan demikian, saya berharap dapat membimbing siswa menjadi individu yang kreatif, mandiri, mampu bekerja sama, dan bertanggung jawab."
     }
   }
 ];
