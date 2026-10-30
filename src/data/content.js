@@ -344,7 +344,6 @@ export const DOKUMENTASI_LIST = [
     images: [
       "/images/dikelas.jpeg",
       "/images/survey1.jpg",
-      "/images/survey2.jpg",
     ]
   },
   {
