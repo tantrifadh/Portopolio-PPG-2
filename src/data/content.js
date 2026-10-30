@@ -2,7 +2,18 @@
 export const NAV_LINKS = [
   { name: "Beranda", href: "/" },
   { name: "Profil", href: "/profil" },
-  { name: "Artefak", href: "/artefak" },
+  { 
+    name: "Artefak", 
+    href: "/artefak",
+    hasDropdown: true,
+    dropdownItems: [
+      { key: "semua", label: "Semua Siklus", desc: "Ringkasan perangkat Siklus 1 - 4", href: "/artefak?siklus=semua" },
+      { key: "1", label: "Siklus 1", desc: "RPP, Media Ajar & Jobsheet (Opsional)", href: "/artefak?siklus=1" },
+      { key: "2", label: "Siklus 2", desc: "RPP, Media Ajar & Jobsheet (Opsional)", href: "/artefak?siklus=2" },
+      { key: "3", label: "Siklus 3", desc: "RPP, Media Ajar & Jobsheet (Opsional)", href: "/artefak?siklus=3" },
+      { key: "4", label: "Siklus 4", desc: "RPP, Media Ajar & Jobsheet (Opsional)", href: "/artefak?siklus=4" },
+    ]
+  },
   { 
     name: "Seminar", 
     href: "/seminar",
@@ -20,7 +31,224 @@ export const NAV_LINKS = [
   { name: "Misi", href: "/misi" },
 ];
 
-// 2. Data Artefak & Analisis Lengkap
+// 2. Data Artefak Berdasarkan Siklus Pembelajaran (Siklus 1 - 4)
+// Setiap siklus memuat: RPP (Rencana Pelaksanaan Pembelajaran), Media Ajar, dan Jobsheet (opsional)
+export const SIKLUS_ARTEFAK_LIST = [
+  {
+    id: 1,
+    key: "1",
+    siklusNumber: 1,
+    badge: "Praktik Terbimbing I",
+    title: "Siklus 1: Topologi Jaringan & Media Transmisi Data",
+    subtitle: "Praktik Pengalaman Lapangan (PPL) Terbimbing Siklus 1",
+    materi: "Pengenalan Topologi Bus, Star, Ring, Mesh & Pengkabelan Twisted Pair (UTP)",
+    kelas: "Kelas X TKJ 1 / Fase E",
+    sekolah: "SMK Negeri 2 Salatiga",
+    model: "Problem Based Learning (PBL)",
+    alokasi: "2 Pertemuan (4 JP x 45 Menit)",
+    deskripsi: "Perangkat pembelajaran Siklus 1 dirancang untuk membangun pemahaman awal peserta didik tentang arsitektur jaringan lokal, karakteristik kabel transmisi, serta keterampilan teknis crimping kabel UTP.",
+    items: {
+      rpp: {
+        id: "rpp-1",
+        type: "rpp",
+        nama: "RPP (Rencana Pelaksanaan Pembelajaran)",
+        label: "Modul Ajar Siklus 1",
+        tag: "Perangkat Utama",
+        deskripsi: "Modul Ajar Kurikulum Merdeka lengkap mencakup Capaian Pembelajaran, Alur Tujuan Pembelajaran (ATP), Pemahaman Bermakna, Pertanyaan Pemantik, Sintaks Problem Based Learning, Diferensiasi Konten & Proses, serta Rubrik Asesmen Diagnostik, Formatif, dan Sumatif.",
+        pdfUrl: "/docs/LK1.pdf",
+        info: "Lengkap • Format PDF • Terverifikasi",
+        pages: "Modul Ajar & Asesmen",
+        isOptional: false
+      },
+      mediaAjar: {
+        id: "media-1",
+        type: "media",
+        nama: "Media Ajar",
+        label: "Slide Interaktif & Animasi Topologi",
+        tag: "Media Pembelajaran",
+        deskripsi: "Media pembelajaran visual berupa slide presentasi interaktif Canva & PowerPoint, infografis diagram skematis topologi fisik & logika, serta video animasi cara kerja pengiriman paket data.",
+        pdfUrl: "/docs/media_ajar.pdf",
+        info: "Slide Interaktif • Format PDF • Visual HD",
+        pages: "Bahan Tayang Presentasi",
+        isOptional: false
+      },
+      jobsheet: {
+        id: "jobsheet-1",
+        type: "jobsheet",
+        nama: "Jobsheet (Opsional)",
+        label: "Jobsheet Praktikum Pengkabelan UTP & Topologi",
+        tag: "Jobsheet Praktik",
+        deskripsi: "Lembar panduan langkah kerja (Jobsheet) praktikum siswa di laboratorium: urutan standar warna kabel T568A dan T568B, teknik crimping konektor RJ-45, pengujian kontinuitas dengan LAN Cable Tester, dan checklist K3.",
+        pdfUrl: "/docs/LK2-CT.pdf",
+        info: "Opsional / Lembar Praktikum • Format PDF",
+        pages: "Lembar Kerja Peserta Didik",
+        isOptional: true,
+        available: true
+      }
+    }
+  },
+  {
+    id: 2,
+    key: "2",
+    siklusNumber: 2,
+    badge: "Praktik Terbimbing II",
+    title: "Siklus 2: Pengalamatan Jaringan (IP Address & Subnetting IPv4)",
+    subtitle: "Praktik Pengalaman Lapangan (PPL) Terbimbing Siklus 2",
+    materi: "Perancangan IP Address Kelas C, Subnet Mask (/24 s.d /28), Network & Broadcast ID",
+    kelas: "Kelas X TKJ 1 / Fase E",
+    sekolah: "SMK Negeri 2 Salatiga",
+    model: "Project Based Learning (PjBL)",
+    alokasi: "2 Pertemuan (4 JP x 45 Menit)",
+    deskripsi: "Perangkat pembelajaran Siklus 2 berfokus pada pemecahan masalah penghitungan subnetting dan perancangan pengalamatan jaringan LAN laboratorium komputer secara kolaboratif.",
+    items: {
+      rpp: {
+        id: "rpp-2",
+        type: "rpp",
+        nama: "RPP (Rencana Pelaksanaan Pembelajaran)",
+        label: "Modul Ajar Siklus 2",
+        tag: "Perangkat Utama",
+        deskripsi: "Modul ajar kurikulum merdeka model Project Based Learning (PjBL) perancangan skema subnetting IPv4. Memuat langkah proyek kelompok, lembar observasi bernalar kritis, dan rubrik penilaian produk desain skema jaringan.",
+        pdfUrl: "/docs/LK2.pdf",
+        info: "Lengkap • Format PDF • Terverifikasi",
+        pages: "Modul Ajar & Rubrik PjBL",
+        isOptional: false
+      },
+      mediaAjar: {
+        id: "media-2",
+        type: "media",
+        nama: "Media Ajar",
+        label: "Slide Subnetting & Simulasi Cisco Packet Tracer",
+        tag: "Media Pembelajaran",
+        deskripsi: "Media ajar presentasi visual analogi pengalamatan rumah dan jaringan, tabel kalkulasi subnetting cepat, serta simulasi pengujian topologi jaringan berbasis Cisco Packet Tracer.",
+        pdfUrl: "/docs/media_ajar.pdf",
+        info: "Simulasi & Slide • Format PDF • Visual HD",
+        pages: "Bahan Tayang Presentasi",
+        isOptional: false
+      },
+      jobsheet: {
+        id: "jobsheet-2",
+        type: "jobsheet",
+        nama: "Jobsheet (Opsional)",
+        label: "Jobsheet Praktikum Subnetting & Konfigurasi IP",
+        tag: "Jobsheet Praktik",
+        deskripsi: "Panduan unjuk kerja (Jobsheet) praktikum perancangan skema IP addressing pada simulator Cisco Packet Tracer, konfigurasi kartu jaringan PC/Laptop, serta testing konektivitas (Ping & Traceroute).",
+        pdfUrl: "/docs/LK2-PMAD.pdf",
+        info: "Opsional / Lembar Praktikum • Format PDF",
+        pages: "Lembar Kerja Peserta Didik",
+        isOptional: true,
+        available: true
+      }
+    }
+  },
+  {
+    id: 3,
+    key: "3",
+    siklusNumber: 3,
+    badge: "Praktik Mandiri I",
+    title: "Siklus 3: Konfigurasi Routing Statis & MikroTik RouterOS",
+    subtitle: "Praktik Pengalaman Lapangan (PPL) Mandiri Siklus 3",
+    materi: "Konfigurasi Interface, IP Address, Gateway, DNS, dan Routing Statis MikroTik",
+    kelas: "Kelas XI TKJ 2 / Fase F",
+    sekolah: "SMK Negeri 2 Salatiga",
+    model: "Problem Based Learning (PBL)",
+    alokasi: "2 Pertemuan (6 JP x 45 Menit)",
+    deskripsi: "Perangkat pembelajaran Siklus 3 melatih peserta didik berpikir komputasional dalam menghubungkan dua segmen jaringan berbeda melalui perangkat RouterBoard MikroTik dengan aplikasi Winbox.",
+    items: {
+      rpp: {
+        id: "rpp-3",
+        type: "rpp",
+        nama: "RPP (Rencana Pelaksanaan Pembelajaran)",
+        label: "Modul Ajar Siklus 3",
+        tag: "Perangkat Utama",
+        deskripsi: "Modul Ajar Fase F Teknik Komputer dan Jaringan dengan sintaks Problem Based Learning. Memuat skenario troubleshooting jaringan lokal, panduan diferensiasi kelompok, dan rubrik penilaian asesmen performa praktikum.",
+        pdfUrl: "/docs/LK3.pdf",
+        info: "Lengkap • Format PDF • Terverifikasi",
+        pages: "Modul Ajar & Troubleshooting",
+        isOptional: false
+      },
+      mediaAjar: {
+        id: "media-3",
+        type: "media",
+        nama: "Media Ajar",
+        label: "Slide GUI Winbox & Diagram Routing Statis",
+        tag: "Media Pembelajaran",
+        deskripsi: "Bahan ajar tayang interaktif menampilkan diagram alur paket data antarnetwork, panduan visual konfigurasi Winbox langkah demi langkah, dan video pendek demonstrasi routing antar router.",
+        pdfUrl: "/docs/media_ajar.pdf",
+        info: "Diagram & Slide • Format PDF • Visual HD",
+        pages: "Bahan Tayang Presentasi",
+        isOptional: false
+      },
+      jobsheet: {
+        id: "jobsheet-3",
+        type: "jobsheet",
+        nama: "Jobsheet (Opsional)",
+        label: "Jobsheet Praktikum Routing MikroTik RouterOS",
+        tag: "Jobsheet Praktik",
+        deskripsi: "Petunjuk kerja operasional praktikum laboratorium jaringan: factory reset MikroTik, konfigurasi ether1 (WAN) & ether2 (LAN), static route, masquerade NAT, dan pengujian akses internet klien.",
+        pdfUrl: "/docs/LK3-PMAL.pdf",
+        info: "Opsional / Lembar Praktikum • Format PDF",
+        pages: "Lembar Kerja Peserta Didik",
+        isOptional: true,
+        available: true
+      }
+    }
+  },
+  {
+    id: 4,
+    key: "4",
+    siklusNumber: 4,
+    badge: "Praktik Mandiri II",
+    title: "Siklus 4: Proyek Internet of Things (IoT) Berbasis ESP32",
+    subtitle: "Praktik Pengalaman Lapangan (PPL) Mandiri Siklus 4",
+    materi: "Pemrograman Sensor Lingkungan (Suhu & Kelembaban) dengan Mikrokontroler ESP32",
+    kelas: "Kelas XI TKJ / Fase F",
+    sekolah: "SMK Negeri 2 Salatiga",
+    model: "Project Based Learning (PjBL) - Pendekatan STEM",
+    alokasi: "2 Pertemuan (8 JP x 45 Menit)",
+    deskripsi: "Perangkat pembelajaran Siklus 4 merupakan puncak integrasi materi elektronika dasar dan jaringan komputer melalui rancang bangun sistem monitoring suhu berbasis IoT ESP32.",
+    items: {
+      rpp: {
+        id: "rpp-4",
+        type: "rpp",
+        nama: "RPP (Rencana Pelaksanaan Pembelajaran)",
+        label: "Modul Ajar Siklus 4",
+        tag: "Perangkat Utama",
+        deskripsi: "Modul Ajar Proyek IoT Kurikulum Merdeka lengkap dengan lembar kerja PjBL 6 tahapan (Penentuan Pertanyaan Mendasar, Perencanaan Proyek, Penyusunan Jadwal, Monitoring, Pengujian, dan Evaluasi Pengalaman Belajar).",
+        pdfUrl: "/docs/LK3-PPL.pdf",
+        info: "Lengkap • Format PDF • Terverifikasi",
+        pages: "Modul Ajar & Desain Proyek",
+        isOptional: false
+      },
+      mediaAjar: {
+        id: "media-4",
+        type: "media",
+        nama: "Media Ajar",
+        label: "Slide Proyek IoT & Skema Rangkaian Wokwi",
+        tag: "Media Pembelajaran",
+        deskripsi: "Media presentasi visual tahapan proyek, wiring diagram breadboard sensor DHT11/DHT22 ke board ESP32, dan demonstrasi simulator sirkuit online Wokwi sebelum implementasi fisik.",
+        pdfUrl: "/docs/media_ajar.pdf",
+        info: "Wiring & Slide • Format PDF • Visual HD",
+        pages: "Bahan Tayang Presentasi",
+        isOptional: false
+      },
+      jobsheet: {
+        id: "jobsheet-4",
+        type: "jobsheet",
+        nama: "Jobsheet (Opsional)",
+        label: "Jobsheet Praktikum Perakitan & Pemrograman ESP32",
+        tag: "Jobsheet Praktik",
+        deskripsi: "Lembar kerja praktikum petunjuk wiring jumper, instalasi ESP32 Board Manager di Arduino IDE, library sensor, compiling, uploading sketsa C++, dan troubleshooting serial monitor.",
+        pdfUrl: "/docs/LK3-PK.pdf",
+        info: "Opsional / Lembar Praktikum • Format PDF",
+        pages: "Lembar Kerja Peserta Didik",
+        isOptional: true,
+        available: true
+      }
+    }
+  }
+];
+
+// 3. Data Artefak & Analisis Lengkap (Legacy)
 export const ARTEFAK_LIST = [
   {
     id: 1,
